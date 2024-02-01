@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { appColors } from '../helper/colors';
 
 const DevelopmentScreen = () => {
     return (
@@ -13,10 +14,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: appColors.white
     },
     textDevelopment: {
-        color: 'black',
+        color: appColors.black,
         fontWeight: 'bold'
     }
 })

@@ -1,9 +1,14 @@
 import { StyleSheet, View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import DevelopmentScreen from '../screens/DevelopmentScreen';
+import HomeTabStack from './stacks/HomeTabStack';
+import OffersTabStack from './stacks/OffersTabStack';
+import OrderTabStack from './stacks/OrderTabStack';
+import ReorderTabStack from './stacks/ReorderTabStack';
+import MoreTabStack from './stacks/MoreTabStack';
 
 import { screens } from '../helper/strings';
+import { appColors } from '../helper/colors';
 
 const MainTabNavigator = () => {
 
@@ -17,7 +22,7 @@ const MainTabNavigator = () => {
         {
             id: 1,
             name: screens?.homeTab,
-            component: DevelopmentScreen,
+            component: HomeTabStack,
             title: "Home",
             labelTitle: "Home",
 
@@ -25,29 +30,28 @@ const MainTabNavigator = () => {
         {
             id: 2,
             name: screens?.offersTab,
-            component: DevelopmentScreen,
+            component: OffersTabStack,
             title: "Offers",
             labelTitle: "Offers"
         },
         {
             id: 3,
             name: screens?.orderTab,
-            component: DevelopmentScreen,
+            component: OrderTabStack,
             title: "Order",
             labelTitle: "Order"
         },
         {
             id: 4,
             name: screens?.reorderTab,
-            component: DevelopmentScreen,
+            component: ReorderTabStack,
             title: "Reorder",
             labelTitle: "Reorder"
         },
         {
             id: 5,
             name: screens?.moreTab,
-            component: DevelopmentScreen,
-            // icon: appIcons.product,
+            component: MoreTabStack,
             title: "More",
             labelTitle: "More"
         }
@@ -63,7 +67,7 @@ const MainTabNavigator = () => {
                 tabBarInactiveBackgroundColor: 'red',
                 tabBarStyle: {
                     height: 70,
-                    backgroundColor: 'white'
+                    backgroundColor: appColors.white
                 }
             }}
         >
