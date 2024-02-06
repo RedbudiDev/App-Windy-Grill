@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeTabStack from './stacks/HomeTabStack';
@@ -9,6 +9,7 @@ import MoreTabStack from './stacks/MoreTabStack';
 
 import { screens } from '../helper/strings';
 import { appColors } from '../helper/colors';
+import { appIcons } from '../helper/icons';
 
 const MainTabNavigator = () => {
 
@@ -24,6 +25,7 @@ const MainTabNavigator = () => {
             name: screens?.homeTab,
             component: HomeTabStack,
             title: "Home",
+            icon: appIcons.home,
             labelTitle: "Home",
 
         },
@@ -32,6 +34,7 @@ const MainTabNavigator = () => {
             name: screens?.offersTab,
             component: OffersTabStack,
             title: "Offers",
+            icon: appIcons.profit,
             labelTitle: "Offers"
         },
         {
@@ -39,6 +42,7 @@ const MainTabNavigator = () => {
             name: screens?.orderTab,
             component: OrderTabStack,
             title: "Order",
+            icon: appIcons.burger,
             labelTitle: "Order"
         },
         {
@@ -46,6 +50,7 @@ const MainTabNavigator = () => {
             name: screens?.reorderTab,
             component: ReorderTabStack,
             title: "Reorder",
+            icon: appIcons.reload,
             labelTitle: "Reorder"
         },
         {
@@ -53,6 +58,7 @@ const MainTabNavigator = () => {
             name: screens?.moreTab,
             component: MoreTabStack,
             title: "More",
+            icon: appIcons.more,
             labelTitle: "More"
         }
     ]
@@ -74,7 +80,7 @@ const MainTabNavigator = () => {
             {
                 /** mapping tab array in main return */
                 tabs?.map((tab) => {
-                    const { name, component, title, labelTitle, id } = tab;
+                    const { name, component, title, labelTitle, id, icon } = tab;
                     return (
                         <Tab.Screen
                             key={id}
@@ -88,7 +94,12 @@ const MainTabNavigator = () => {
                                     tabBarIcon: ({ focused }) => {
                                         return (
                                             <View style={styles.labelContainer}>
-                                                <Text>{labelTitle}</Text>
+                                                <Image 
+                                                    style={{width: 30, height: 30}}
+                                                    source={icon}
+                                                    tintColor={focused ? appColors.red : appColors.black}
+                                                />
+                                                <Text style={{ color: focused ? appColors.red : appColors.black }}>{labelTitle}</Text>
                                             </View>
                                         )
                                     }
@@ -109,7 +120,8 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: appColors.white
     }
 })
 
