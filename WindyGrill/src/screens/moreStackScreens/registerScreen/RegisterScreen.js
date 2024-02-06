@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, SafeAreaView, View } from 'react-native';
+import { StyleSheet, ScrollView, SafeAreaView, View, KeyboardAvoidingView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Header from '../../../components/Header';
 import SectionTitle from '../../../components/SectionTitle';
@@ -19,56 +19,57 @@ const RegisterScreen = () => {
     const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-                <Header
-                    showLeftIcon
-                    onLeftIconPress={() => { navigation.goBack() }}
-                />
+            <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "android" ? null : "padding"}>
+                <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
+                    <Header
+                        showLeftIcon
+                        onLeftIconPress={() => { navigation.goBack() }}
+                    />
+                    {/** SECTION TITLE: */}
+                    <SectionTitle
+                        text={"REGISTER"}
+                    />
+                    <View style={styles.mainContentContainer}>
+                        <Input
+                            placeholder={"Username"}
+                            multiline={false}
+                            value={username}
+                            onChangeText={setUsername}
+                        />
+                        <Input
+                            placeholder={"First name"}
+                            multiline={false}
+                            value={first_name}
+                            onChangeText={setFirstName}
+                        />
+                        <Input
+                            placeholder={"Address"}
+                            multiline={false}
+                            value={address}
+                            onChangeText={setAddreess}
+                        />
+                        <Input
+                            placeholder={"Email Address"}
+                            multiline={false}
+                            value={email}
+                            onChangeText={setEmail}
+                            keyboardType={"email-address"}
+                        />
+                        <Input
+                            placeholder={"Password"}
+                            multiline={false}
+                            value={password}
+                            onChangeText={setPassword}
+                            secured={true}
+                        />
 
-                {/** SECTION TITLE: */}
-                <SectionTitle
-                    text={"REGISTER"}
-                />
-                <View style={styles.mainContentContainer}>
-                    <Input
-                        placeholder={"Username"}
-                        multiline={false}
-                        value={username}
-                        onChangeText={setUsername}
-                    />
-                    <Input
-                        placeholder={"First name"}
-                        multiline={false}
-                        value={first_name}
-                        onChangeText={setFirstName}
-                    />
-                    <Input
-                        placeholder={"Address"}
-                        multiline={false}
-                        value={address}
-                        onChangeText={setAddreess}
-                    />
-                    <Input
-                        placeholder={"Email Address"}
-                        multiline={false}
-                        value={email}
-                        onChangeText={setEmail}
-                        keyboardType={"email-address"}
-                    />
-                    <Input
-                        placeholder={"Password"}
-                        multiline={false}
-                        value={password}
-                        onChangeText={setPassword}
-                        secured={true}
-                    />
-
-                    <Button
-                        title={"REGISTER"}
-                        onPress={() => { console.log("Register!") }}
-                    />
-                </View>
-            </ScrollView>
+                        <Button
+                            title={"REGISTER"}
+                            onPress={() => { console.log("Register!") }}
+                        />
+                    </View>
+                </ScrollView>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     )
 }

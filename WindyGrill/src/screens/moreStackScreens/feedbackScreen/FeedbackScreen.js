@@ -17,7 +17,6 @@ const FeedbackScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "android" ? null : "padding"}>
-
                 <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
                     <Header
                         showLeftIcon
