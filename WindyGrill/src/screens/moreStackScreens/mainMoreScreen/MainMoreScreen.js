@@ -24,17 +24,19 @@ const MainMoreScreen = () => {
                     <View key={id.toString()}>
                         <PageItem
                             item={section}
-                            onPagePress={() => { 
-                                switch(action) {
+                            onPagePress={() => {
+                                switch (action) {
                                     case 'feedback':
                                         navigation.navigate(screens.feedbackScreen);
                                         break;
-                                    case 'login':
                                     case 'register':
+                                        navigation.navigate(screens.registerScreen);
+                                        break;
+                                    case 'login':
                                     case 'career':
                                         console.log("A");
                                         break;
-                                    default: 
+                                    default:
                                         console.log("B");
                                         break;
                                 }

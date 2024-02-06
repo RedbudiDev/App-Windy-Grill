@@ -12,6 +12,7 @@ const Input = (props) => {
         keyboardType = "default", // prop for determing style of input keyboard
         placeholder = "", // prop for placeholder
         multiline = false, // prop for multiline
+        secured = false, // prop for secured text entry
     } = props;
 
     // main return
@@ -26,6 +27,7 @@ const Input = (props) => {
                 placeholder={placeholder}
                 autoCapitalize={'none'}
                 autoCorrect={false}
+                secureTextEntry={secured}
             />
         </View>
     )

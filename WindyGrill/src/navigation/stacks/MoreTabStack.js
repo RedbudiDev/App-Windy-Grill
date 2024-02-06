@@ -3,6 +3,7 @@ import MainMoreScreen from '../../screens/moreStackScreens/mainMoreScreen/MainMo
 import FeedbackScreen from '../../screens/moreStackScreens/feedbackScreen/FeedbackScreen';
 import CartScreen from '../../screens/moreStackScreens/cartScreen/CartScreen';
 import { screens } from '../../helper/strings';
+import RegisterScreen from '../../screens/moreStackScreens/registerScreen/RegisterScreen';
 
 const MoreTabStack = () => {
     const Stack = createNativeStackNavigator();
@@ -25,6 +26,13 @@ const MoreTabStack = () => {
             <Stack.Screen 
                 component={CartScreen}
                 name={screens.cartScreen}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen 
+                component={RegisterScreen}
+                name={screens.registerScreen}
                 options={{
                     headerShown: false,
                 }}
