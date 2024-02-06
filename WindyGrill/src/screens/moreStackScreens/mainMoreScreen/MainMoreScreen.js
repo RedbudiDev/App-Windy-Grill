@@ -1,14 +1,19 @@
 import React from 'react';
 import { View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import SectionTitle from '../../../components/SectionTitle';
 import PageItem from './components/PageItem';
+import Header from '../../../components/Header';
 
 import { appColors } from '../../../helper/colors';
 import pages from './mock/pages.json';
-import Header from '../../../components/Header';
+import { screens } from '../../../helper/strings';
 
 const MainMoreScreen = () => {
+
+    // navigation
+    const navigation = useNavigation();
 
     // function for mapping sections
     const _renderSections = () => {
@@ -32,9 +37,9 @@ const MainMoreScreen = () => {
         <SafeAreaView style={styles.container}>
             <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
                 {/** TODO: HEADER */}
-                <Header 
+                <Header
                     showRightIcon
-                    onRightIconPress = {() => {console.log("Cart!")}}
+                    onRightIconPress={() => { navigation.navigate(screens.cartScreen) }}
                 />
 
                 {/** SECTION TITLE: */}

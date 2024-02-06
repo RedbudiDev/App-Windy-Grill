@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { appColors } from '../helper/colors';
 import { appIcons } from '../helper/icons';
 
 const Header = (props) => {
@@ -19,7 +20,7 @@ const Header = (props) => {
                     onPress={() => { onLeftIconPress() }}
                 >
                     <Image
-                        style={{ width: 40, height: 40, transform: [{ rotate: '180 deg' }] }}
+                        style={{ width: 35, height: 35, transform: [{ rotate: '180 deg' }] }}
                         source={appIcons.next}
                     />
                 </TouchableOpacity>
@@ -35,7 +36,7 @@ const Header = (props) => {
                     onPress={() => { onRightIconPress() }}
                 >
                     <Image
-                        style={{ width: 40, height: 40 }}
+                        style={{ width: 35, height: 35 }}
                         source={appIcons.cart}
                     />
                 </TouchableOpacity>
@@ -47,15 +48,15 @@ const Header = (props) => {
             <View style={styles.container}>
                 {_renderLeftIcon()}
                 {/** TODO: header image render */}
-                <Text style={{ flex: 1 }}>Header Image</Text>
+                <Text style={{ color: appColors.black }}>Header Image</Text>
                 {_renderRightIcon()}
             </View>
-            <View style={{ marginTop: 10, flexDirection: 'row', marginHorizontal: 10, alignItems: 'center' }}>
+            <View style={{ marginTop: 10, flexDirection: 'row', paddingHorizontal: 10, alignItems: 'center' }}>
                 <Image
                     source={appIcons.map}
                     style={{ width: 30, height: 30 }}
                 />
-                <Text style={{ marginLeft: 5 }} numberOfLines={2}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+                <Text style={{ marginLeft: 5, color: appColors.black }} numberOfLines={2}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
             </View>
         </View>
     )
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingHorizontal: 10,
         marginTop: 10,
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center'
     }
 })

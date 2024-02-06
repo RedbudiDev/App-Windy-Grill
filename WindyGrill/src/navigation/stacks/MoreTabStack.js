@@ -1,7 +1,9 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainMoreScreen from '../../screens/moreStackScreens/mainMoreScreen/MainMoreScreen';
 import FeedbackScreen from '../../screens/moreStackScreens/feedbackScreen/FeedbackScreen';
+import CartScreen from '../../screens/moreStackScreens/cartScreen/CartScreen';
 import { screens } from '../../helper/strings';
+
 const MoreTabStack = () => {
     const Stack = createNativeStackNavigator();
     return (
@@ -16,6 +18,13 @@ const MoreTabStack = () => {
             <Stack.Screen 
                 component={FeedbackScreen}
                 name={screens.feedbackScreen}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen 
+                component={CartScreen}
+                name={screens.cartScreen}
                 options={{
                     headerShown: false,
                 }}
