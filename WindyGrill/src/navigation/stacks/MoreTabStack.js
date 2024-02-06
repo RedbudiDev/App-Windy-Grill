@@ -1,13 +1,21 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DevelopmentScreen from '../../screens/DevelopmentScreen';
+import MainMoreScreen from '../../screens/moreStackScreens/mainMoreScreen/MainMoreScreen';
+import FeedbackScreen from '../../screens/moreStackScreens/feedbackScreen/FeedbackScreen';
 import { screens } from '../../helper/strings';
 const MoreTabStack = () => {
     const Stack = createNativeStackNavigator();
     return (
         <Stack.Navigator>
             <Stack.Screen 
-                component={DevelopmentScreen}
-                name={screens.developmentMore}
+                component={MainMoreScreen}
+                name={screens.moreTabMainScreen}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen 
+                component={FeedbackScreen}
+                name={screens.feedbackScreen}
                 options={{
                     headerShown: false,
                 }}

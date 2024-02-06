@@ -9,5 +9,6 @@ export const screens = {
     reorderTab: 'Reorder-Tab',
     developmentReorder: 'Development-Reorder',
     moreTab: 'More-Tab',    
-    developmentMore: 'Development-More',
+    moreTabMainScreen: 'More-Tab-Main-Screen',
+    feedbackScreen: 'Feedback-Screen',
 }
