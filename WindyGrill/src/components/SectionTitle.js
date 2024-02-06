@@ -27,9 +27,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     text: {
-        fontSize: 24,
+        fontSize: 25,
         color: appColors.black,
-        fontWeight: 'bold'
+        fontFamily: 'FlameBold'
     }
 })
 

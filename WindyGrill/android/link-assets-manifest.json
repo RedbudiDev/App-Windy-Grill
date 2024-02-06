@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/FlameBold.otf",
+      "sha1": "dae3145bf0bef5dd7ee391753ae52da0dde650db"
+    },
+    {
+      "path": "assets/fonts/FlameCondensed.otf",
+      "sha1": "f254f7d4cb4c627f4698fe55cbb70bbdb2ccd7d2"
+    },
+    {
+      "path": "assets/fonts/FlameRegular.otf",
+      "sha1": "cd4b06e477d905b80b75816a81a8e1f9c6ca8203"
+    },
+    {
+      "path": "assets/fonts/FlameSans.otf",
+      "sha1": "b3ba2726623aa0ed2459b8ad515104522bfafaeb"
+    }
+  ]
+}

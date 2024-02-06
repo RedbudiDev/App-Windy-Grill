@@ -99,7 +99,7 @@ const MainTabNavigator = () => {
                                                     source={icon}
                                                     tintColor={focused ? appColors.red : appColors.black}
                                                 />
-                                                <Text style={{ color: focused ? appColors.red : appColors.black }}>{labelTitle}</Text>
+                                                <Text style={{ fontFamily: 'FlameRegular', color: focused ? appColors.red : appColors.black }}>{labelTitle}</Text>
                                             </View>
                                         )
                                     }

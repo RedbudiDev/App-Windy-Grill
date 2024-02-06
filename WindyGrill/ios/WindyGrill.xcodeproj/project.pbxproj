@@ -12,8 +12,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		5C0A07BA434241978141B28F /* FlameRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 311505272F3D4D07B758408D /* FlameRegular.otf */; };
 		7699B88040F8A987B510C191 /* libPods-WindyGrill-WindyGrillTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WindyGrill-WindyGrillTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A341031B68774FC0A97289BC /* FlameSans.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1FA2FFF0DEAA4C719E79323A /* FlameSans.otf */; };
+		CFBD2461D10C4069A4C7CF21 /* FlameCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29572CF08D6344748549A961 /* FlameCondensed.otf */; };
+		D527BF36D1554D4DB08E3DDD /* FlameBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3079595BF45749B2A286EEC8 /* FlameBold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,10 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = WindyGrill/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WindyGrill/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-WindyGrill-WindyGrillTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WindyGrill-WindyGrillTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA2FFF0DEAA4C719E79323A /* FlameSans.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FlameSans.otf; path = ../assets/fonts/FlameSans.otf; sourceTree = "<group>"; };
+		29572CF08D6344748549A961 /* FlameCondensed.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FlameCondensed.otf; path = ../assets/fonts/FlameCondensed.otf; sourceTree = "<group>"; };
+		3079595BF45749B2A286EEC8 /* FlameBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FlameBold.otf; path = ../assets/fonts/FlameBold.otf; sourceTree = "<group>"; };
+		311505272F3D4D07B758408D /* FlameRegular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FlameRegular.otf; path = ../assets/fonts/FlameRegular.otf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-WindyGrill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindyGrill.debug.xcconfig"; path = "Target Support Files/Pods-WindyGrill/Pods-WindyGrill.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-WindyGrill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindyGrill.release.xcconfig"; path = "Target Support Files/Pods-WindyGrill/Pods-WindyGrill.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-WindyGrill-WindyGrillTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WindyGrill-WindyGrillTests.debug.xcconfig"; path = "Target Support Files/Pods-WindyGrill-WindyGrillTests/Pods-WindyGrill-WindyGrillTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +114,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		627B7910B84544848F5C6542 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3079595BF45749B2A286EEC8 /* FlameBold.otf */,
+				29572CF08D6344748549A961 /* FlameCondensed.otf */,
+				311505272F3D4D07B758408D /* FlameRegular.otf */,
+				1FA2FFF0DEAA4C719E79323A /* FlameSans.otf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +142,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				627B7910B84544848F5C6542 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -243,6 +264,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D527BF36D1554D4DB08E3DDD /* FlameBold.otf in Resources */,
+				CFBD2461D10C4069A4C7CF21 /* FlameCondensed.otf in Resources */,
+				5C0A07BA434241978141B28F /* FlameRegular.otf in Resources */,
+				A341031B68774FC0A97289BC /* FlameSans.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
