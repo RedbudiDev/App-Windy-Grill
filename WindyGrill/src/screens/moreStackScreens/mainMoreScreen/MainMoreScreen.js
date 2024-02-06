@@ -19,12 +19,26 @@ const MainMoreScreen = () => {
     const _renderSections = () => {
         return (
             pages?.map((section, index) => {
-                const { id, title } = section;
+                const { id, title, action } = section;
                 return (
                     <View key={id.toString()}>
                         <PageItem
                             item={section}
-                            onPagePress={() => { console.log(title) }}
+                            onPagePress={() => { 
+                                switch(action) {
+                                    case 'feedback':
+                                        navigation.navigate(screens.feedbackScreen);
+                                        break;
+                                    case 'login':
+                                    case 'register':
+                                    case 'career':
+                                        console.log("A");
+                                        break;
+                                    default: 
+                                        console.log("B");
+                                        break;
+                                }
+                            }}
                         />
                     </View>
                 )
@@ -36,7 +50,6 @@ const MainMoreScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-                {/** TODO: HEADER */}
                 <Header
                     showRightIcon
                     onRightIconPress={() => { navigation.navigate(screens.cartScreen) }}

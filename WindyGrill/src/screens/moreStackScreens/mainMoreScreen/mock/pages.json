@@ -1,18 +1,22 @@
 [
     {
         "id": 1,
-        "title": "Login"
+        "title": "Login",
+        "action": "login"
     },
     {
         "id": 2,
-        "title": "Register"
+        "title": "Register",
+        "action": "register"
     },
     {
         "id": 3,
-        "title": "Submit feedback"
+        "title": "Submit feedback",
+        "action": "feedback"
     },
     {
         "id": 4,
-        "title": "Careers"
+        "title": "Careers",
+        "action": "careers"
     }
 ]

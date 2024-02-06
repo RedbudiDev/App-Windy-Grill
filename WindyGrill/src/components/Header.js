@@ -44,17 +44,17 @@ const Header = (props) => {
         }
     }
     return (
-        <View style={{ marginVertical: 10 }}>
+        <View style={{ marginVertical: 10, paddingHorizontal: 10 }}>
             <View style={styles.container}>
                 {_renderLeftIcon()}
                 {/** TODO: header image render */}
                 <Text style={{ color: appColors.black }}>Header Image</Text>
                 {_renderRightIcon()}
             </View>
-            <View style={{ marginTop: 10, flexDirection: 'row', paddingHorizontal: 10, alignItems: 'center' }}>
+            <View style={{ marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
                 <Image
                     source={appIcons.map}
-                    style={{ width: 30, height: 30 }}
+                    style={{ width: 28, height: 28 }}
                 />
                 <Text style={{ marginLeft: 5, color: appColors.black }} numberOfLines={2}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
             </View>
@@ -64,10 +64,7 @@ const Header = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         flexDirection: 'row',
-        paddingHorizontal: 10,
-        marginTop: 10,
         justifyContent: 'space-between',
         alignItems: 'center'
     }
