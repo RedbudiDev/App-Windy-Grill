@@ -49,8 +49,9 @@ const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: 18,
-        color: appColors.black,
-        fontFamily: 'FlameRegular'
+        color: appColors.textGray,
+        fontFamily: 'FlameRegular',
+        paddingLeft: 10
     }
 })
 
