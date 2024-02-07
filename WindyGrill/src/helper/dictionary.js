@@ -121,6 +121,12 @@ export const dictionary = {
     'Pošaljite utiske': [
         'Pošaljite utiske',
         'Sumbit feedback'
+    ],
+
+    // *** SETTINGS SCREEN ***
+    'Izaberite jezik / Choose language': [
+        'Izaberite jezik / Choose language',
+        'Izaberite jezik / Choose language'
     ]
 
     
