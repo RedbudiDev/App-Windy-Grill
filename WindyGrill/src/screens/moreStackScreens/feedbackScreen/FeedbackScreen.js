@@ -1,16 +1,20 @@
 import React from 'react';
 import { StyleSheet, ScrollView, SafeAreaView, View, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import usePolyglot from '../../../hooks/usePolyglot';
+
 import Header from '../../../components/Header';
 import SectionTitle from '../../../components/SectionTitle';
+import Button from '../../../components/Button';
 import Input from '../../../components/Input';
+
 import { screens } from '../../../helper/strings';
 import { appColors } from '../../../helper/colors';
-import Button from '../../../components/Button';
 
 const FeedbackScreen = () => {
 
     const navigation = useNavigation();
+    const __ = usePolyglot();
 
     const [email, setEmail] = React.useState("");
     const [explanation, setExplanation] = React.useState("");
@@ -27,33 +31,33 @@ const FeedbackScreen = () => {
 
                     {/** SECTION TITLE: */}
                     <SectionTitle
-                        text={"GIVE US FEEDBACK"}
+                        text={__("Ostavite utiske").toUpperCase()}
                     />
 
                     {/** page list sections: */}
                     <View style={styles.mainContentContainer}>
                         <Input
-                            placeholder={"Email address"}
+                            placeholder={__("E-mail")}
                             multiline={false}
                             value={email}
                             onChangeText={setEmail}
                             keyboardType={"email-address"}
                         />
                         <Input
-                            placeholder={"Explain your feedback"}
+                            placeholder={__("Opis Vašeg utiska")}
                             value={explanation}
                             onChangeText={setExplanation}
                             keyboardType={"default"}
                             multiline={true}
                         />
                         <Button
-                            title={"Uplad Your Screenshot"}
+                            title={__("Ostavite sliku")}
                             onPress={() => { console.log("Upload photo") }}
                             customTitleStyle={{ fontSize: 14, color: appColors.black, alignSelf: 'flex-start' }}
                             customContainerStyle={{ backgroundColor: appColors.white, borderWidth: 1 }}
                         />
                         <Button
-                            title={"SUBMIT FEEDBACK"}
+                            title={__("Pošaljite utiske").toUpperCase()}
                             onPress={() => { console.log("Submit feedback") }}
                         />
                     </View>

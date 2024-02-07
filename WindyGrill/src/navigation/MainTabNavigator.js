@@ -10,11 +10,14 @@ import MoreTabStack from './stacks/MoreTabStack';
 import { screens } from '../helper/strings';
 import { appColors } from '../helper/colors';
 import { appIcons } from '../helper/icons';
+import usePolyglot from '../hooks/usePolyglot';
 
 const MainTabNavigator = () => {
 
     // variable of Tab Stack
     const Tab = createBottomTabNavigator();
+
+    const __ = usePolyglot();
 
     /**
      * array of 5 tabs
@@ -26,7 +29,7 @@ const MainTabNavigator = () => {
             component: HomeTabStack,
             title: "Home",
             icon: appIcons.home,
-            labelTitle: "Home",
+            labelTitle: __("Početna"),
 
         },
         {
@@ -35,7 +38,7 @@ const MainTabNavigator = () => {
             component: OffersTabStack,
             title: "Offers",
             icon: appIcons.profit,
-            labelTitle: "Offers"
+            labelTitle: __('Ponude')
         },
         {
             id: 3,
@@ -43,7 +46,7 @@ const MainTabNavigator = () => {
             component: OrderTabStack,
             title: "Order",
             icon: appIcons.burger,
-            labelTitle: "Order"
+            labelTitle: __("Naruči")
         },
         {
             id: 4,
@@ -51,7 +54,7 @@ const MainTabNavigator = () => {
             component: ReorderTabStack,
             title: "Reorder",
             icon: appIcons.reload,
-            labelTitle: "Reorder"
+            labelTitle: __("Ponovi")
         },
         {
             id: 5,
@@ -59,7 +62,7 @@ const MainTabNavigator = () => {
             component: MoreTabStack,
             title: "More",
             icon: appIcons.more,
-            labelTitle: "More"
+            labelTitle: __("Još")
         }
     ]
 

@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import usePolyglot from '../../../hooks/usePolyglot';
+
 import HeaderBackButton from '../../../components/HeaderBackButton';
 import SectionTitle from '../../../components/SectionTitle';
 
 const SettingsScreen = () => {
 
+    const __ = usePolyglot();
     const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.container}>
@@ -16,7 +19,7 @@ const SettingsScreen = () => {
                 />
                 {/** title */}
                 <SectionTitle
-                    text={"SETTINGS"}
+                    text={__("Podešavanja")}
                 />
             </ScrollView>
         </SafeAreaView>

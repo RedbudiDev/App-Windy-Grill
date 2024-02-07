@@ -1,13 +1,17 @@
 import React from 'react';
 import { StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import usePolyglot from '../../../hooks/usePolyglot';
+
 import Header from '../../../components/Header';
 import SectionTitle from '../../../components/SectionTitle';
+
 import { screens } from '../../../helper/strings';
 
 const CartScreen = () => {
 
     const navigation = useNavigation();
+    const __ = usePolyglot();
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
@@ -18,7 +22,7 @@ const CartScreen = () => {
 
                 {/** SECTION TITLE: */}
                 <SectionTitle
-                    text={"CART"}
+                    text={__("Korpa")}
                 />
             </ScrollView>
         </SafeAreaView>

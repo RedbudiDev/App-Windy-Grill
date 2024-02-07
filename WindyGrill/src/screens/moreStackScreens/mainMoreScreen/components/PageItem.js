@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Dimensions, Image, TouchableOpacity} from 'react-native';
+import usePolyglot from '../../../../hooks/usePolyglot';
 import { appColors } from '../../../../helper/colors';
 import { appIcons } from '../../../../helper/icons';
 
@@ -9,6 +10,8 @@ const PageItem = (props) => {
         item, // prop for item
         onPagePress = () => {} // callback for page press
     } = props;
+
+    const __ = usePolyglot();
     
     // main return
     return (
@@ -18,7 +21,7 @@ const PageItem = (props) => {
                 activeOpacity={0.7}
                 onPress={() => {onPagePress()}}
             >
-                <Text style = {styles.titleText}>{item?.title}</Text>
+                <Text style = {styles.titleText}>{__(item?.title)}</Text>
                 <Image 
                     style={styles.pageIcon}
                     source={appIcons.next}

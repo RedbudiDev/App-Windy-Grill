@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, ScrollView, SafeAreaView, View, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import usePolyglot from '../../../hooks/usePolyglot';
 
 import Header from '../../../components/Header';
 import SectionTitle from '../../../components/SectionTitle';
@@ -11,13 +12,15 @@ import { appColors } from '../../../helper/colors';
 
 const RegisterScreen = () => {
 
+    const navigation = useNavigation();
+    const __ = usePolyglot();
+
     const [username, setUsername] = React.useState("");
     const [first_name, setFirstName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [address, setAddreess] = React.useState("");
     const [password, setPassword] = React.useState("");
 
-    const navigation = useNavigation();
     return (
         <SafeAreaView style={styles.container}>
             <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "android" ? null : "padding"}>
@@ -28,36 +31,36 @@ const RegisterScreen = () => {
                     />
                     {/** SECTION TITLE: */}
                     <SectionTitle
-                        text={"REGISTER"}
+                        text={__("Registruj se").toUpperCase()}
                     />
                     <View style={styles.mainContentContainer}>
                         <Input
-                            placeholder={"Username"}
+                            placeholder={__("Korisničko ime")}
                             multiline={false}
                             value={username}
                             onChangeText={setUsername}
                         />
                         <Input
-                            placeholder={"First name"}
+                            placeholder={__("Ime")}
                             multiline={false}
                             value={first_name}
                             onChangeText={setFirstName}
                         />
                         <Input
-                            placeholder={"Address"}
+                            placeholder={__("Adresa")}
                             multiline={false}
                             value={address}
                             onChangeText={setAddreess}
                         />
                         <Input
-                            placeholder={"Email Address"}
+                            placeholder={__("E-mail")}
                             multiline={false}
                             value={email}
                             onChangeText={setEmail}
                             keyboardType={"email-address"}
                         />
                         <Input
-                            placeholder={"Password"}
+                            placeholder={__("Šifra")}
                             multiline={false}
                             value={password}
                             onChangeText={setPassword}
@@ -65,7 +68,7 @@ const RegisterScreen = () => {
                         />
 
                         <Button
-                            title={"REGISTER"}
+                            title={__("Registruj se").toUpperCase()}
                             onPress={() => { console.log("Register!") }}
                         />
                     </View>

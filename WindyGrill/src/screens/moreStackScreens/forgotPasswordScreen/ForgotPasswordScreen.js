@@ -1,15 +1,20 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import usePolyglot from '../../../hooks/usePolyglot';
+
 import Button from '../../../components/Button';
 import Header from '../../../components/Header';
 import Input from '../../../components/Input';
 import SectionTitle from '../../../components/SectionTitle';
+
 import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
 
 const ForgotPasswordScreen = () => {
     const navigation = useNavigation();
+    const __ = usePolyglot();
+    
     const [email, setEmail] = React.useState("");
 
     return (
@@ -26,18 +31,18 @@ const ForgotPasswordScreen = () => {
 
                     {/** SECTION TITLE: */}
                     <SectionTitle
-                        text={"FORGOT PASSWORD?"}
+                        text={__("Zaboravljena lozinka").toUpperCase()}
                     />
                     {/** content */}
                     <View style={styles.mainContentContainer}>
                         <Text style = {{marginHorizontal: 20, color: appColors.black}}>
                             {
-                                "Lost your password? Please enter your username or email address. You will recive a link to create a new password via email."
+                                __('Izgubili ste lozinku? Unesite svoje korisničko ime ili adresu e-pošte. Dobićete vezu za kreiranje nove lozinke putem e-pošte.')
                             }
                         </Text>
                         {/** fields */}
                         <Input
-                            placeholder={"Email address or username"}
+                            placeholder={__("E-mail adresa ili korisničko ime")}
                             multiline={false}
                             value={email}
                             onChangeText={setEmail}
@@ -47,7 +52,7 @@ const ForgotPasswordScreen = () => {
 
                         {/** button */}
                         <Button
-                            title={"RESET PASSWORD"}
+                            title={__("Resetuj šifru").toUpperCase()}
                             onPress={() => { console.log("Reset!") }}
                         />
                     </View>

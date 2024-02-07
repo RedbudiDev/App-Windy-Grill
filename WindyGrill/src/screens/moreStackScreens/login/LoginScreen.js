@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import usePolyglot from '../../../hooks/usePolyglot';
 
 import Button from '../../../components/Button';
 import HeaderBackButton from '../../../components/HeaderBackButton';
@@ -13,6 +14,7 @@ import { screens } from '../../../helper/strings';
 const LoginScreen = () => {
 
     const navigation = useNavigation();
+    const __ = usePolyglot();
 
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -29,13 +31,13 @@ const LoginScreen = () => {
 
                     {/** SECTION TITLE: */}
                     <SectionTitle
-                        text={"LOGIN"}
+                        text={__("Uloguj se").toUpperCase()}
                         customContainerStyle={{ alignSelf: 'center' }}
                     />
 
                     {/** fields */}
                     <Input
-                        placeholder={"Email Address"}
+                        placeholder={__("E-mail")}
                         multiline={false}
                         value={email}
                         onChangeText={setEmail}
@@ -43,7 +45,7 @@ const LoginScreen = () => {
                         customInputStyle={{ backgroundColor: appColors.white }}
                     />
                     <Input
-                        placeholder={"Password"}
+                        placeholder={__("Šifra")}
                         multiline={false}
                         value={password}
                         onChangeText={setPassword}
@@ -56,12 +58,12 @@ const LoginScreen = () => {
                         onPress={() => { navigation.navigate(screens.forgotPasswordScreen) }}
                         style={styles.forgotContainer}
                     >
-                        <Text style={styles.forgotText}>Forgot password?</Text>
+                        <Text style={styles.forgotText}>{__("Zaboravljena lozinka")}</Text>
                     </TouchableOpacity>
 
                     {/** button */}
                     <Button
-                        title={"LOGIN"}
+                        title={__("Uloguj se").toUpperCase()}
                         onPress={() => { console.log("Login!") }}
                     />
                 </ScrollView>

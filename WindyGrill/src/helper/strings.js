@@ -17,3 +17,8 @@ export const screens = {
     forgotPasswordScreen: 'Forgot-Password-Screen',
     settingsScreen : 'Settings-Screen'
 }
+
+
+export const asyncKeys = {
+    languageKey: 'Language-Key',
+}

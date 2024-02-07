@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import usePolyglot from '../../../hooks/usePolyglot';
 
 import SectionTitle from '../../../components/SectionTitle';
 import PageItem from './components/PageItem';
@@ -14,6 +15,7 @@ const MainMoreScreen = () => {
 
     // navigation
     const navigation = useNavigation();
+    const __ = usePolyglot();
 
     // function for mapping sections
     const _renderSections = () => {
@@ -64,7 +66,7 @@ const MainMoreScreen = () => {
 
                 {/** SECTION TITLE: */}
                 <SectionTitle
-                    text={"ACCOUNT"}
+                    text={__("Nalog").toUpperCase()}
                 />
                 {/** page list sections: */}
                 <View style={styles.mainContentContainer}>
