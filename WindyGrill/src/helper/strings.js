@@ -13,4 +13,5 @@ export const screens = {
     feedbackScreen: 'Feedback-Screen',
     cartScreen: 'Cart-Screen',
     registerScreen: 'Register-Screen',
+    loginScreen: 'Login-Screen',
 }
