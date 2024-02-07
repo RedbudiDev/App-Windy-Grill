@@ -14,4 +14,5 @@ export const screens = {
     cartScreen: 'Cart-Screen',
     registerScreen: 'Register-Screen',
     loginScreen: 'Login-Screen',
+    forgotPasswordScreen: 'Forgot-Password-Screen',
 }

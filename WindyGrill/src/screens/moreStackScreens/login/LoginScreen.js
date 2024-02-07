@@ -8,6 +8,7 @@ import Input from '../../../components/Input';
 import SectionTitle from '../../../components/SectionTitle';
 
 import { appColors } from '../../../helper/colors';
+import { screens } from '../../../helper/strings';
 
 const LoginScreen = () => {
 
@@ -52,7 +53,7 @@ const LoginScreen = () => {
 
                     <TouchableOpacity
                         activeOpacity={0.7}
-                        onPress={() => { console.log("Forgott!") }}
+                        onPress={() => { navigation.navigate(screens.forgotPasswordScreen) }}
                         style={styles.forgotContainer}
                     >
                         <Text style={styles.forgotText}>Forgot password?</Text>
