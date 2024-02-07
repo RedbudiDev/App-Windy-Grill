@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, SafeAreaView, View, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, ScrollView, SafeAreaView, View, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Header from '../../../components/Header';
 import SectionTitle from '../../../components/SectionTitle';
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
         shadowRadius: 1,
         elevation: 5,
         marginBottom: 20,
-        borderWidth: 1,
+        borderWidth: Platform.OS === "android" ? 0 : 1,
         borderColor: appColors.textGray
     }
 })
