@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyleSheet, ScrollView, SafeAreaView, View, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
 import Header from '../../../components/Header';
 import SectionTitle from '../../../components/SectionTitle';
-import { screens } from '../../../helper/strings';
-import { appColors } from '../../../helper/colors';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
+
+import { appColors } from '../../../helper/colors';
 
 const RegisterScreen = () => {
 
