@@ -15,4 +15,5 @@ export const screens = {
     registerScreen: 'Register-Screen',
     loginScreen: 'Login-Screen',
     forgotPasswordScreen: 'Forgot-Password-Screen',
+    settingsScreen : 'Settings-Screen'
 }

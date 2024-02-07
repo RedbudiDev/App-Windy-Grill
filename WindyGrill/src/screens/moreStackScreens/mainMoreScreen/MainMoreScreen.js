@@ -35,6 +35,9 @@ const MainMoreScreen = () => {
                                     case 'login':
                                         navigation.navigate(screens.loginScreen);
                                         break;
+                                    case 'settings':
+                                        navigation.navigate(screens.settingsScreen); 
+                                        break;
                                     case 'career':
                                         console.log("A");
                                         break;

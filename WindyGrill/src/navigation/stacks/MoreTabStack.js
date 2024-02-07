@@ -6,6 +6,7 @@ import { screens } from '../../helper/strings';
 import RegisterScreen from '../../screens/moreStackScreens/registerScreen/RegisterScreen';
 import LoginScreen from '../../screens/moreStackScreens/login/LoginScreen';
 import ForgotPasswordScreen from '../../screens/moreStackScreens/forgotPasswordScreen/ForgotPasswordScreen';
+import SettingsScreen from '../../screens/moreStackScreens/settingsScreen/SettingsScreen';
 
 const MoreTabStack = () => {
     const Stack = createNativeStackNavigator();
@@ -49,6 +50,13 @@ const MoreTabStack = () => {
             <Stack.Screen 
                 component={ForgotPasswordScreen}
                 name={screens.forgotPasswordScreen}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen 
+                component={SettingsScreen}
+                name={screens.settingsScreen}
                 options={{
                     headerShown: false,
                 }}
