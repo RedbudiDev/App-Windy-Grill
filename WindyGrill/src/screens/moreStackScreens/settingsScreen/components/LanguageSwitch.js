@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateLanguage, updateLanguageValue } from '../../../../redux/actions/LanguageActions';
 
@@ -18,8 +18,11 @@ const LanguageSwitch = () => {
     /** funnction for changing language */
     function _handleChange(lan) {
         try {
-            // dispatch(updateLanguage(lan));
-            console.log("This must be changed!");
+            if(Platform.OS === "ios") {
+                dispatch(updateLanguage(lan));
+            } else {
+                console.log("This must be changed!");
+            }
         } catch (error) {
             console.log("Error:", error);
         }
