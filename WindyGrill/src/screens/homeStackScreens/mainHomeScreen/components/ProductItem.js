@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: 150,
         backgroundColor: appColors.white,
-        marginVertical: 10,
+        marginVertical: 5,
         paddingHorizontal: 20,
         width: Dimensions.get('screen').width
     },

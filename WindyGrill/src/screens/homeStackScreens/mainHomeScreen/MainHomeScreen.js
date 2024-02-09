@@ -21,7 +21,7 @@ const MainHomeScreen = () => {
     const _renderSectionRightIcon = () => {
         return (
             <TouchableOpacity
-                onPress={() => { console.log("Press!") }}
+                onPress={() => { navigation.navigate(screens.offersTab, { screens: screens.developmentOffers }) }}
                 activeOpacity={0.7}
             >
                 <Text style={styles.sectionRightTextStyle}>{__("Pogledaj sve")}</Text>
