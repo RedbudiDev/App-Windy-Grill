@@ -39,18 +39,21 @@ const RegisterScreen = () => {
                             multiline={false}
                             value={username}
                             onChangeText={setUsername}
+                            customInputStyle={{backgroundColor: appColors.white}}
                         />
                         <Input
                             placeholder={__("Ime")}
                             multiline={false}
                             value={first_name}
                             onChangeText={setFirstName}
+                            customInputStyle={{backgroundColor: appColors.white}}
                         />
                         <Input
                             placeholder={__("Adresa")}
                             multiline={false}
                             value={address}
                             onChangeText={setAddreess}
+                            customInputStyle={{backgroundColor: appColors.white}}
                         />
                         <Input
                             placeholder={__("E-mail")}
@@ -58,6 +61,7 @@ const RegisterScreen = () => {
                             value={email}
                             onChangeText={setEmail}
                             keyboardType={"email-address"}
+                            customInputStyle={{backgroundColor: appColors.white}}
                         />
                         <Input
                             placeholder={__("Šifra")}
@@ -65,6 +69,7 @@ const RegisterScreen = () => {
                             value={password}
                             onChangeText={setPassword}
                             secured={true}
+                            customInputStyle={{backgroundColor: appColors.white}}
                         />
 
                         <Button

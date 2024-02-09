@@ -1,13 +1,18 @@
 export const screens = {
     mainTab: 'Main-Tab-Screen',
+
     homeTab: 'Home-Tab',
-    developmentHome: 'Development-Home',
+    homeScreen: 'Home-Screen',
+    
     offersTab: 'Offers-Tab',
     developmentOffers: 'Development-Offers',
+    
     orderTab: 'Order-Tab',
     developmentOrder: 'Development-Order',
+    
     reorderTab: 'Reorder-Tab',
     developmentReorder: 'Development-Reorder',
+    
     moreTab: 'More-Tab',    
     moreTabMainScreen: 'More-Tab-Main-Screen',
     feedbackScreen: 'Feedback-Screen',

@@ -5,6 +5,7 @@ export const appIcons = {
     profit: require('../../assets/icons/profit.png'),
     reload: require('../../assets/icons/reload.png'),
     next: require('../../assets/icons/next.png'),    
-    cart: require('../../assets/icons/cart.png'),    
+    cart: require('../../assets/icons/cart.png'),
     map: require('../../assets/icons/map.png'),
+    burgerImage: require('../../assets/icons/burgerImage.png'),
 }

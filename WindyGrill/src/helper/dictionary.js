@@ -61,7 +61,7 @@ export const dictionary = {
         'Account'
     ],
 
-    // *** REGISTER SCREEN ***
+    // *** Register Screen ***
     'Korisničko ime': [
         'Korisničko ime',
         'Username'
@@ -75,7 +75,7 @@ export const dictionary = {
         'Address'
     ],
 
-    // *** LOGIN SCREEN ***
+    // *** Login Screen ***
     'E-mail': [
         'E-mail',
         'Email address'
@@ -85,7 +85,7 @@ export const dictionary = {
         'Password'
     ],
 
-    // *** FORGOT PASSWORD ***
+    // *** Forgot Password ***
     'Zaboravljena lozinka': [
         'Zaboravljena lozinka?',
         'Forgot password?'
@@ -103,13 +103,13 @@ export const dictionary = {
         'Reset password'
     ],
 
-    // *** CART SCREEN ***
+    // *** Cart Screen ***
     'Korpa': [
         'Korpa',
         'Cart'
     ],
 
-    // *** FEEDBACK SCREEN ***
+    // *** Feedback Screen ***
     'Opis Vašeg utiska': [
         'Opis Vašeg utiska', 
         'Explain your feedback'
@@ -123,11 +123,24 @@ export const dictionary = {
         'Sumbit feedback'
     ],
 
-    // *** SETTINGS SCREEN ***
+    // *** Settings Screen ***
     'Izaberite jezik / Choose language': [
         'Izaberite jezik / Choose language',
         'Izaberite jezik / Choose language'
+    ],
+
+    // *** HOME TAB *** 
+
+    // Main Home Screen
+    'Započnite narudžbinu': [
+        'Započnite narudžbinu',
+        'Start order'
+    ],
+    'Pogledaj sve': [
+        'Pogledaj sve',
+        'View all'
     ]
+
 
     
 }
