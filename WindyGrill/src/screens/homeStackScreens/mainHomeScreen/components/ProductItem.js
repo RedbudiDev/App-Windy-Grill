@@ -7,22 +7,23 @@ const ProductItem = (props) => {
 
     const {
         item = {}, // prop for item
-        onItemPress = () => {} // callback for click on item
+        onItemPress = () => {}, // callback for click on item
+        type = '', // prop type of item
     } = props;
     return (
         <TouchableOpacity
             activeOpacity={0.7}
-            style = {styles.container}
+            style = {{...styles.container, backgroundColor: type === 'one' ? appColors.white : appColors.textGray}}
             onPress={() => {onItemPress()}}
         >
-            <View style = {styles.imageContainer}>
+            <View style = {{...styles.imageContainer, backgroundColor: type === 'one' ? appColors.appColor : appColors.white }}>
                 <Image 
                     source={appIcons.burgerImage}
                     style={styles.image}
                 />
             </View>
             <View style = {styles.textContainer}>
-                <Text style = {styles.text}>{"BURGER KING EXTRA LARGE TRIPLE"}</Text>
+                <Text style = {{...styles.text, color: type === 'one' ? appColors.textGray : appColors.black}}>{"BURGER KING EXTRA LARGE TRIPLE"}</Text>
             </View>
         </TouchableOpacity>
     )

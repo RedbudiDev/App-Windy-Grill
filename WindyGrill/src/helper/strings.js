@@ -5,7 +5,7 @@ export const screens = {
     homeScreen: 'Home-Screen',
     
     offersTab: 'Offers-Tab',
-    developmentOffers: 'Development-Offers',
+    offersMainScreen: 'Offers-Main-Screen',
     
     orderTab: 'Order-Tab',
     developmentOrder: 'Development-Order',

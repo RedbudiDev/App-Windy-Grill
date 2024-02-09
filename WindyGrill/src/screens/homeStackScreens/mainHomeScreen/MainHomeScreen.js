@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, SafeAreaView, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import usePolyglot from "../../../hooks/usePolyglot";
 
@@ -21,7 +21,7 @@ const MainHomeScreen = () => {
     const _renderSectionRightIcon = () => {
         return (
             <TouchableOpacity
-                onPress={() => { navigation.navigate(screens.offersTab, { screens: screens.developmentOffers }) }}
+                onPress={() => { navigation.navigate(screens.offersTab, { screens: screens.offersMainScreen }) }}
                 activeOpacity={0.7}
             >
                 <Text style={styles.sectionRightTextStyle}>{__("Pogledaj sve")}</Text>
@@ -34,9 +34,13 @@ const MainHomeScreen = () => {
         return (
             [1, 2, 3].map((item, i) => {
                 return (
-                    <ProductItem
-                        onItemPress={() => { console.log("Press on item") }}
-                    />
+                    <View key={i.toString()}>
+                        <ProductItem
+                            onItemPress={() => { console.log("Press on item") }}
+                            type = 'one'
+                        />
+                    </View>
+
                 )
             })
         )
