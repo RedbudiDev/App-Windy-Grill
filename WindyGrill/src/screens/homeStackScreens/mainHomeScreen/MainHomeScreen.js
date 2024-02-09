@@ -36,7 +36,7 @@ const MainHomeScreen = () => {
                 return (
                     <View key={i.toString()}>
                         <ProductItem
-                            onItemPress={() => { console.log("Press on item") }}
+                            onItemPress={() => { navigation.navigate(screens.productDetailHomeTabScreen) }}
                             type = 'one'
                         />
                     </View>

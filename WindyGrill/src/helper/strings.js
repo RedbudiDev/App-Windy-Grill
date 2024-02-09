@@ -3,6 +3,7 @@ export const screens = {
 
     homeTab: 'Home-Tab',
     homeScreen: 'Home-Screen',
+    productDetailHomeTabScreen: 'Product-Detail-Home-Tab-Screen', 
     
     offersTab: 'Offers-Tab',
     offersMainScreen: 'Offers-Main-Screen',

@@ -13,7 +13,7 @@ const ProductItem = (props) => {
     return (
         <TouchableOpacity
             activeOpacity={0.7}
-            style = {{...styles.container, backgroundColor: type === 'one' ? appColors.white : appColors.textGray}}
+            style = {{...styles.container, backgroundColor: type === 'one' ? appColors.white : appColors.backgroundDarker}}
             onPress={() => {onItemPress()}}
         >
             <View style = {{...styles.imageContainer, backgroundColor: type === 'one' ? appColors.appColor : appColors.white }}>

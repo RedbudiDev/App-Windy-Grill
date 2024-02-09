@@ -21,7 +21,7 @@ const OffersMainScreen = () => {
                 return (
                     <View key={i.toString()}>
                         <ProductItem
-                            onItemPress={() => { console.log("Aloo") }}
+                            onItemPress={() => { console.log("Alo") }}
                             type='two'
                         />
                     </View>
@@ -34,7 +34,7 @@ const OffersMainScreen = () => {
             <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
                 <Header
                     showRightIcon
-                    onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.moreTabMainScreen, params: { screen: screens.cartScreen } }) }}
+                    onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
                 />
                 <SectionTitle
                     customContainerStyle={{ backgroundColor: appColors.appColor, height: 60 }}

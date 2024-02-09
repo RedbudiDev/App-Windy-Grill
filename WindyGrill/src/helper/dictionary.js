@@ -131,7 +131,7 @@ export const dictionary = {
 
     // *** HOME TAB *** 
 
-    // Main Home Screen
+    // *** Main Home Screen ***
     'Započnite narudžbinu': [
         'Započnite narudžbinu',
         'Start order'
@@ -139,8 +139,13 @@ export const dictionary = {
     'Pogledaj sve': [
         'Pogledaj sve',
         'View all'
-    ]
-
+    ],
+    
+    // *** Product Details Screen ***
+    'Dodaj u korpu': [
+        'Dodaj u korpu',
+        'Add to cart'
+    ],
 
     
 }
