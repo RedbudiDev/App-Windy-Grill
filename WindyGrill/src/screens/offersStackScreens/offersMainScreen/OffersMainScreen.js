@@ -21,7 +21,7 @@ const OffersMainScreen = () => {
                 return (
                     <View key={i.toString()}>
                         <ProductItem
-                            onItemPress={() => { console.log("Alo") }}
+                            onItemPress={() => { navigation.navigate(screens.productDetailOffersTabScreen) }}
                             type='two'
                         />
                     </View>
