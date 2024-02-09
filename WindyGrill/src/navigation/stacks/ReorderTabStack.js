@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DevelopmentScreen from '../../screens/DevelopmentScreen';
+import ReorderLoginScreen from '../../screens/reorderStackScreens/reorderNoLoginScreen/ReordeLoginScreen';
 import { screens } from '../../helper/strings';
 const ReorderTabStack = () => {
     const Stack = createNativeStackNavigator();
     return (
         <Stack.Navigator>
             <Stack.Screen 
-                component={DevelopmentScreen}
-                name={screens.developmentReorder}
+                component={ReorderLoginScreen}
+                name={screens.reorderNoLoginScreen}
                 options={{
                     headerShown: false,
                 }}

@@ -1,0 +1,197 @@
+[
+    {
+        "id": 1,
+        "title": "Category one",
+        "sub_categories": [
+            {
+                "id": 1,
+                "title": "Sub Category one"
+            },
+            {
+                "id": 2,
+                "title": "Sub Category two"
+            },
+            {
+                "id": 3,
+                "title": "Sub Category three"
+            },
+            {
+                "id": 4,
+                "title": "Sub Category four"
+            },
+            {
+                "id": 5,
+                "title": "Sub Category fifth"
+            },
+            {
+                "id": 6,
+                "title": "Sub Category sixth"
+            },
+            {
+                "id": 7,
+                "title": "Sub Category seven"
+            }
+        ]
+    },
+  
+    {
+        "id": 2,
+        "title": "Category two",
+        "sub_categories": [
+            {
+                "id": 1,
+                "title": "Sub Category one"
+            },
+            {
+                "id": 2,
+                "title": "Sub Category two"
+            },
+            {
+                "id": 3,
+                "title": "Sub Category three"
+            }
+        ]
+    },
+   
+    {
+        "id": 3,
+        "title": "Category three",
+        "sub_categories": [
+            {
+                "id": 1,
+                "title": "Sub Category one"
+            },
+            {
+                "id": 2,
+                "title": "Sub Category two"
+            }
+        ]
+    },
+   
+    {
+        "id": 4,
+        "title": "Category four",
+        "sub_categories": [
+            {
+                "id": 1,
+                "title": "Sub Category one"
+            },
+            {
+                "id": 2,
+                "title": "Sub Category two"
+            },
+            {
+                "id": 3,
+                "title": "Sub Category three"
+            },
+            {
+                "id": 4,
+                "title": "Sub Category four"
+            },
+            {
+                "id": 5,
+                "title": "Sub Category fifth"
+            },
+            {
+                "id": 6,
+                "title": "Sub Category sixth"
+            }
+        ]
+    },
+   
+    {
+        "id": 5,
+        "title": "Category fifth",
+        "sub_categories": [
+            {
+                "id": 1,
+                "title": "Sub Category one"
+            },
+            {
+                "id": 2,
+                "title": "Sub Category two"
+            }
+        ]
+    },
+   
+    {
+        "id": 6,
+        "title": "Category sixth",
+        "sub_categories": [
+            {
+                "id": 1,
+                "title": "Sub Category one"
+            },
+            {
+                "id": 2,
+                "title": "Sub Category two"
+            },
+            {
+                "id": 3,
+                "title": "Sub Category three"
+            },
+            {
+                "id": 4,
+                "title": "Sub Category four"
+            },
+            {
+                "id": 5,
+                "title": "Sub Category fifth"
+            },
+            {
+                "id": 6,
+                "title": "Sub Category sixth"
+            },
+            {
+                "id": 7,
+                "title": "Sub Category seven"
+            }
+        ]
+    },
+    
+    {
+        "id": 7,
+        "title": "Category seven",
+        "sub_categories": [
+            {
+                "id": 1,
+                "title": "Sub Category one"
+            },
+            {
+                "id": 2,
+                "title": "Sub Category two"
+            },
+            {
+                "id": 3,
+                "title": "Sub Category three"
+            }
+        ]
+    },
+
+    {
+        "id": 8,
+        "title": "Category eight",
+        "sub_categories": [
+            {
+                "id": 1,
+                "title": "Sub Category one"
+            },
+            {
+                "id": 2,
+                "title": "Sub Category two"
+            },
+            {
+                "id": 3,
+                "title": "Sub Category three"
+            },
+            {
+                "id": 4,
+                "title": "Sub Category four"
+            },
+            {
+                "id": 5,
+                "title": "Sub Category fifth"
+            }
+        ]
+    }
+]

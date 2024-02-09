@@ -147,5 +147,29 @@ export const dictionary = {
         'Add to cart'
     ],
 
-    
+
+    // *** REORDER TAB ***
+ 
+    // *** Reorder No Login Screen ***
+    'Ponovi': [
+        'Ponovi',
+        'Reorder'
+    ],
+    'Narudžbine': [
+        'Narudžbine',
+        'Orders'
+    ],
+    'Ups. Niste ulogovani.': [
+        'Ups. Niste ulogovani.',
+        'Whoops. You are not logged in.'
+    ],
+
+
+    // *** ORDER TAB ***
+
+    // *** Order Main Screen
+    'Naš meni': [
+        'Naš meni',
+        'Our menu'
+    ],
 }

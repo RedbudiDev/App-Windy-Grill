@@ -10,10 +10,10 @@ export const screens = {
     productDetailOffersTabScreen: 'Product-Detail-Offers-Tab-Screen',
     
     orderTab: 'Order-Tab',
-    developmentOrder: 'Development-Order',
+    orderMainScreen: 'Oreder-Main-Screen',
     
     reorderTab: 'Reorder-Tab',
-    developmentReorder: 'Development-Reorder',
+    reorderNoLoginScreen: 'Reorder-No-Login-Screen',
     
     moreTab: 'More-Tab',    
     moreTabMainScreen: 'More-Tab-Main-Screen',

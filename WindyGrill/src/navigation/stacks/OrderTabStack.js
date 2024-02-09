@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DevelopmentScreen from '../../screens/DevelopmentScreen';
+import OrderMainScreen from '../../screens/orderStackScreens/orderMainScreen/OrderMainScreen';
 import { screens } from '../../helper/strings';
 const OrderTabStack = () => {
     const Stack = createNativeStackNavigator();
     return (
         <Stack.Navigator>
             <Stack.Screen 
-                component={DevelopmentScreen}
-                name={screens.developmentOrder}
+                component={OrderMainScreen}
+                name={screens.orderMainScreen}
                 options={{
                     headerShown: false,
                 }}
