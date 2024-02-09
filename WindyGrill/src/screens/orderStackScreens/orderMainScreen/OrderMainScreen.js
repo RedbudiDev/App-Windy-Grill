@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, FlatList } from 'react-native';
 
 import usePolyglot from '../../../hooks/usePolyglot';
 import { useNavigation } from '@react-navigation/native';
@@ -37,13 +37,23 @@ const OrderMainScreen = () => {
 
     const _renderSubCategories = () => {
         return (
-            selectedCategory?.sub_categories?.map((item, i) => {
-                return (
-                    <SubCategoryItem 
-                        
-                    />
-                )
-            })
+            <FlatList 
+                data={selectedCategory?.sub_categories}
+                renderItem={({item, index}) => {
+                    return (
+                        <SubCategoryItem 
+                            
+                        />
+                    )
+                }}
+                keyExtractor={(item, index) => index.toString()}
+                bounces={false}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+                numColumns={2}
+                contentContainerStyle={{marginVertical: 10}}
+                columnWrapperStyle={{marginTop: 10}}
+            />
         )
     }
 
@@ -55,7 +65,6 @@ const OrderMainScreen = () => {
                     showRightIcon
                     onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
                 />
-
                 <View style={{ height: 100, backgroundColor: appColors.red }}>
                     <Text style={styles.textTitle}>{__("Naš meni").toUpperCase()}</Text>
                     <View style={styles.scrollViewStyle}>
@@ -64,7 +73,7 @@ const OrderMainScreen = () => {
                         </ScrollView>
                     </View>
                 </View>
-                <View style={{marginTop: 60, backgroundColor: 'blue', height: 100}}/>
+                <View style={{marginTop: 60, backgroundColor: 'blue'}}/>
                 {_renderSubCategories()}
             </ScrollView>
         </SafeAreaView>
