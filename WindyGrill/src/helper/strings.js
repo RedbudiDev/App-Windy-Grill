@@ -11,6 +11,7 @@ export const screens = {
     
     orderTab: 'Order-Tab',
     orderMainScreen: 'Oreder-Main-Screen',
+    productDetailOrderTabScreen: 'Product-Detail-Order-Tab-Screen',
     
     reorderTab: 'Reorder-Tab',
     reorderNoLoginScreen: 'Reorder-No-Login-Screen',

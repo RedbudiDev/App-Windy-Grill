@@ -5,13 +5,13 @@ import usePolyglot from '../../../hooks/usePolyglot';
 import { useNavigation } from '@react-navigation/native';
 
 import Header from '../../../components/Header';
+import CategoryItem from './components/CategoryItem';
+import SubCategoryItem from './components/SubCategoryItem';
 
 import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
 
 import categories from './mock/categories.json';
-import CategoryItem from './components/CategoryItem';
-import SubCategoryItem from './components/SubCategoryItem';
 
 const OrderMainScreen = () => {
 
@@ -42,7 +42,8 @@ const OrderMainScreen = () => {
                 renderItem={({item, index}) => {
                     return (
                         <SubCategoryItem 
-                            
+                            item = {item}
+                            onSubCategoryItemPress={() => { navigation.navigate(screens.productDetailOrderTabScreen) }}
                         />
                     )
                 }}
