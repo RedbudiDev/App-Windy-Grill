@@ -18,11 +18,7 @@ const LanguageSwitch = () => {
     /** funnction for changing language */
     function _handleChange(lan) {
         try {
-            if(Platform.OS === "ios") {
-                dispatch(updateLanguage(lan));
-            } else {
-                console.log("This must be changed!");
-            }
+            dispatch(updateLanguage(lan));
         } catch (error) {
             console.log("Error:", error);
         }
