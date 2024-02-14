@@ -7,10 +7,12 @@ import Header from "../../../components/Header";
 import Button from "../../../components/Button";
 import ProductItem from "./components/ProductItem";
 import SectionTitle from "../../../components/SectionTitle";
+import BannerSlider from "./components/BannerSlider";
 
 import { screens } from "../../../helper/strings";
 import { appColors } from "../../../helper/colors";
 
+import images from './mock/images.json';
 
 const MainHomeScreen = () => {
     const navigation = useNavigation();
@@ -53,6 +55,9 @@ const MainHomeScreen = () => {
                 <Header
                     showRightIcon
                     onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
+                />
+                <BannerSlider 
+                    data = {images}
                 />
                 <Button
                     title={__("Započnite narudžbinu").toUpperCase()}

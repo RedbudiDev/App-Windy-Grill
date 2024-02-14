@@ -133,7 +133,7 @@ export const dictionary = {
 
     // *** Main Home Screen ***
     'Započnite narudžbinu': [
-        'Započnite narudžbinu',
+        'Naručite',
         'Start order'
     ],
     'Pogledaj sve': [
