@@ -56,14 +56,14 @@ const LoginScreen = () => {
                     </TouchableOpacity>
 
                     {/** register butotn */}
-                    <View style={{ marginHorizontal: 20, marginTop: 10 }}>
-                        <Text style={{ ...styles.forgotText, alignSelf: 'center' }}>
+                    <View style={styles.registerTextContainer}>
+                        <Text style={[styles.forgotText, { alignSelf: 'center' }]}>
                             {__("Nemate nalog?")}
-                            <Text 
+                            <Text
                                 style={{ color: appColors.black }}
-                                onPress={() => {navigation.navigate(screens.registerScreen)}}
+                                onPress={() => { navigation.navigate(screens.registerScreen) }}
                             >
-                                {" " + __("Registruj se")+"."}
+                                {" " + __("Registruj se") + "."}
                             </Text>
                         </Text>
                     </View>
@@ -91,6 +91,10 @@ const styles = StyleSheet.create({
     forgotText: {
         color: appColors.textGray,
         fontFamily: 'FlameRegular'
+    },
+    registerTextContainer: {
+        marginHorizontal: 20,
+        marginTop: 10
     }
 })
 
