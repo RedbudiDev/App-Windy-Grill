@@ -1,11 +1,14 @@
 export const screens = {
-    mainTab: 'Main-Tab-Screen',
+    
+    initialScreen: 'Initial-Screen',
 
     authStack: 'Auth-Stack',
     registerScreen: 'Register-Screen',
     loginScreen: 'Login-Screen',
     forgotPasswordScreen: 'Forgot-Password-Screen',
 
+    mainTab: 'Main-Tab-Screen',
+    
     homeTab: 'Home-Tab',
     homeScreen: 'Home-Screen',
     productDetailHomeTabScreen: 'Product-Detail-Home-Tab-Screen', 
