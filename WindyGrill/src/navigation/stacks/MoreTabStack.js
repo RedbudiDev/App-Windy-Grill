@@ -3,9 +3,6 @@ import MainMoreScreen from '../../screens/moreStackScreens/mainMoreScreen/MainMo
 import FeedbackScreen from '../../screens/moreStackScreens/feedbackScreen/FeedbackScreen';
 import CartScreen from '../../screens/moreStackScreens/cartScreen/CartScreen';
 import { screens } from '../../helper/strings';
-import RegisterScreen from '../../screens/moreStackScreens/registerScreen/RegisterScreen';
-import LoginScreen from '../../screens/moreStackScreens/login/LoginScreen';
-import ForgotPasswordScreen from '../../screens/moreStackScreens/forgotPasswordScreen/ForgotPasswordScreen';
 import SettingsScreen from '../../screens/moreStackScreens/settingsScreen/SettingsScreen';
 
 const MoreTabStack = () => {
@@ -29,27 +26,6 @@ const MoreTabStack = () => {
             <Stack.Screen 
                 component={CartScreen}
                 name={screens.cartScreen}
-                options={{
-                    headerShown: false,
-                }}
-            />
-            <Stack.Screen 
-                component={RegisterScreen}
-                name={screens.registerScreen}
-                options={{
-                    headerShown: false,
-                }}
-            />
-            <Stack.Screen 
-                component={LoginScreen}
-                name={screens.loginScreen}
-                options={{
-                    headerShown: false,
-                }}
-            />
-            <Stack.Screen 
-                component={ForgotPasswordScreen}
-                name={screens.forgotPasswordScreen}
                 options={{
                     headerShown: false,
                 }}

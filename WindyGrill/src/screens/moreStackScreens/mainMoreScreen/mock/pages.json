@@ -1,26 +1,16 @@
 [
     {
         "id": 1,
-        "title": "Uloguj se",
-        "action": "login"
-    },
-    {
-        "id": 2,
-        "title": "Registruj se",
-        "action": "register"
-    },
-    {
-        "id": 3,
         "title": "Ostavite utiske",
         "action": "feedback"
     },
     {
-        "id": 4,
+        "id": 2,
         "title": "Karijere",
         "action": "careers"
     },
     {
-        "id": 5,
+        "id": 3,
         "title": "Podešavanja",
         "action": "settings"
     }

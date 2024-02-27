@@ -1,10 +1,9 @@
 import React from 'react';
-import { Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import usePolyglot from '../../../hooks/usePolyglot';
 
 import Button from '../../../components/Button';
-import HeaderBackButton from '../../../components/HeaderBackButton';
 import Input from '../../../components/Input';
 import SectionTitle from '../../../components/SectionTitle';
 
@@ -24,15 +23,10 @@ const LoginScreen = () => {
             <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "android" ? null : "padding"}>
                 <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
 
-                    {/** header */}
-                    <HeaderBackButton
-                        onLeftIconPress={() => { navigation.goBack() }}
-                    />
-
                     {/** SECTION TITLE: */}
                     <SectionTitle
                         text={__("Uloguj se").toUpperCase()}
-                        customContainerStyle={{ alignSelf: 'center' }}
+                        customContainerStyle={{ alignSelf: 'center', marginTop: 40 }}
                     />
 
                     {/** fields */}
@@ -60,6 +54,19 @@ const LoginScreen = () => {
                     >
                         <Text style={styles.forgotText}>{__("Zaboravljena lozinka")}</Text>
                     </TouchableOpacity>
+
+                    {/** register butotn */}
+                    <View style={{ marginHorizontal: 20, marginTop: 10 }}>
+                        <Text style={{ ...styles.forgotText, alignSelf: 'center' }}>
+                            {__("Nemate nalog?")}
+                            <Text 
+                                style={{ color: appColors.black }}
+                                onPress={() => {navigation.navigate(screens.registerScreen)}}
+                            >
+                                {" " + __("Registruj se")+"."}
+                            </Text>
+                        </Text>
+                    </View>
 
                     {/** button */}
                     <Button

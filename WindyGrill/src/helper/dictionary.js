@@ -84,6 +84,10 @@ export const dictionary = {
         'Šifra',
         'Password'
     ],
+    'Nemate nalog?': [
+        'Nemate nalog?',
+        'Do not have an account?'
+    ],
 
     // *** Forgot Password ***
     'Zaboravljena lozinka': [
