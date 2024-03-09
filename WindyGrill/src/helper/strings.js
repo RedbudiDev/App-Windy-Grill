@@ -34,4 +34,5 @@ export const screens = {
 
 export const asyncKeys = {
     languageKey: 'Language-Key',
+    tokenKey: 'Token-Key'
 }

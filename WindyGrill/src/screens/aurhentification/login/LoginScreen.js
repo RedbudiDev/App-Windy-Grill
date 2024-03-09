@@ -1,11 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
+
+import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import usePolyglot from '../../../hooks/usePolyglot';
+import { fetchData } from '../../../services/FetchClient';
 
 import Button from '../../../components/Button';
 import Input from '../../../components/Input';
 import SectionTitle from '../../../components/SectionTitle';
+import Toast from 'react-native-toast-message';
+import Loading from '../../../components/Loading';
 
 import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
@@ -13,11 +18,106 @@ import { screens } from '../../../helper/strings';
 const LoginScreen = () => {
 
     const navigation = useNavigation();
+    const dispatch = useDispatch();
     const __ = usePolyglot();
 
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    const [loading, setLoading] = React.useState(false);
 
+    /**
+     * function for validation 
+     * 
+     * returning object { success, message }
+     */
+    function _validateData() {
+        if (!email.trim()) {
+            return {
+                success: false,
+                message: __("Unesite email")
+            }
+        }
+        if (!password.trim()) {
+            return {
+                success: false,
+                message: __("Unesite šifru")
+            }
+        }
+        return {
+            success: true,
+            message: "Prosli smo validaciju"
+        }
+    }
+
+    /** function for login */
+    async function _doLogin() {
+        try {
+            const validationData = _validateData();
+            const { message, success } = validationData;
+            if (success) {
+                const url = "integration/customer/token";
+                const methode = "POST";
+                const data = {
+                    username: email,
+                    password: password
+                }
+                const response = await fetchData(url, methode, data, null);
+                console.log("Token:", response);
+                setLoading(false);
+            } else {
+                setLoading(false);
+                Toast.show({
+                    text1: message,
+                    type: 'error',
+                    position: 'top',
+                    visibilityTime: 1500
+                });
+            }
+        } catch (error) {
+            const status = error?.message?.response?.status;                
+            setLoading(false);
+            if (status !== undefined) {
+                switch (status) {
+                    case 401:
+                        Toast.show({
+                            text1: error?.message?.response?.data?.message,
+                            type: 'error',
+                            position: 'top',
+                            visibilityTime: 1500
+                        });
+                        break;
+                    case 400:
+                        Toast.show({
+                            text1: __("Došlo je do greške"),
+                            type: 'error',
+                            position: 'top',
+                            visibilityTime: 1500
+                        });
+                        break;
+                    default:
+                        Toast.show({
+                            text1: __("Došlo je do greške"),
+                            type: 'error',
+                            position: 'top',
+                            visibilityTime: 1500
+                        });
+                        break;
+                }
+            } else {
+                Toast.show({
+                    text1: __("Došlo je do greške"),
+                    type: 'error',
+                    position: 'top',
+                    visibilityTime: 1500
+                });
+            }
+        }
+    }
+
+    // main return
+    if(loading) {
+        return <Loading />
+    }
     return (
         <SafeAreaView style={styles.container}>
             <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "android" ? null : "padding"}>
@@ -71,7 +171,10 @@ const LoginScreen = () => {
                     {/** button */}
                     <Button
                         title={__("Uloguj se").toUpperCase()}
-                        onPress={() => { console.log("Login!") }}
+                        onPress={() => {
+                            setLoading(true);
+                            _doLogin();
+                        }}
                     />
                 </ScrollView>
             </KeyboardAvoidingView>

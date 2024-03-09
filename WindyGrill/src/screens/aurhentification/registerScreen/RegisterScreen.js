@@ -9,9 +9,9 @@ import SectionTitle from '../../../components/SectionTitle';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import Loading from '../../../components/Loading';
+import Toast from 'react-native-toast-message';
 
 import { appColors } from '../../../helper/colors';
-import { Toast } from 'react-native-toast-message/lib/src/Toast';
 
 const RegisterScreen = () => {
 
@@ -119,7 +119,6 @@ const RegisterScreen = () => {
                         });
                         break;
                     case 500:
-                        console.log("Error:", error.message.response);
                         Toast.show({
                             text1: __("Došlo je do greške"),
                             type: 'error',
@@ -128,7 +127,6 @@ const RegisterScreen = () => {
                         });
                         break;
                     default: 
-                        console.log('B');
                         Toast.show({
                             text1: __("Došlo je do greške"),
                             type: 'error',
@@ -138,7 +136,6 @@ const RegisterScreen = () => {
                         break;
                 }
             } else {
-                console.log('C');
                 Toast.show({
                     text1: __("Došlo je do greške"),
                     type: 'error',
