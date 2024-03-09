@@ -8,6 +8,7 @@ export const screens = {
     forgotPasswordScreen: 'Forgot-Password-Screen',
 
     mainTab: 'Main-Tab-Screen',
+    separatedStack: 'Separated-Stack',
     
     homeTab: 'Home-Tab',
     homeScreen: 'Home-Screen',

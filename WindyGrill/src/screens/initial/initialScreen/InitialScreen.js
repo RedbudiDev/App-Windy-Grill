@@ -8,12 +8,11 @@ import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
 
 const InitialScreen = () => {
-
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <FallingImage
-                doNavigate={() => { setTimeout(() => { navigation.replace(screens.authStack) }, 1000) }}
+                doNavigate={() => { setTimeout(() => { navigation.replace(screens.separatedStack) }, 1000) }}
             />
         </View>
     )

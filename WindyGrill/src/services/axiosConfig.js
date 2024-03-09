@@ -11,7 +11,6 @@ export const createAxiosInstance = (method, token) => {
     instance.interceptors.request.use(config =>{
         if (token) {
             config.headers.Authorization = `Bearer ${token}`
-            // config.headers = { "Customer-Token": token }
         } 
         return config;
     }, error => {

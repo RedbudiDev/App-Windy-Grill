@@ -4,11 +4,12 @@ import AuthStack from './AuthStack';
 import { screens } from '../helper/strings';
 import InitialScreen from '../screens/initial/initialScreen/InitialScreen';
 import { useSelector } from 'react-redux';
+import SeparatedStack from './SeparatedStack';
 
 const InitialStack = () => {
     // variable of stack
     const Stack = createNativeStackNavigator();
-    
+
     // redux token state
     const token = useSelector((state) => state.auth.token);
 
@@ -22,25 +23,13 @@ const InitialStack = () => {
                     headerShown: false
                 }}
             />
-            {
-                !token ?
-                    <Stack.Screen
-                        component={AuthStack}
-                        name={screens.authStack}
-                        options={{
-                            headerShown: false,
-                        }}
-                    />
-                    :
-                    <Stack.Screen
-                        component={MainTabNavigator}
-                        name={screens.mainTab}
-                        options={{
-                            headerShown: false,
-                        }}
-                    />
-            }
-
+            <Stack.Screen
+                component={SeparatedStack}
+                name={screens.separatedStack}
+                options={{
+                    headerShown: false,
+                }}
+            />
         </Stack.Navigator>
 
     )

@@ -1,20 +1,26 @@
 import React from 'react';
 import { View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+
 import { useNavigation } from '@react-navigation/native';
 import usePolyglot from '../../../hooks/usePolyglot';
+import { useDispatch } from 'react-redux';
+
+import { updateToken } from '../../../redux/actions/AuthActions';
 
 import SectionTitle from '../../../components/SectionTitle';
 import PageItem from './components/PageItem';
 import Header from '../../../components/Header';
 
 import { appColors } from '../../../helper/colors';
-import pages from './mock/pages.json';
 import { screens } from '../../../helper/strings';
+
+import pages from './mock/pages.json';
 
 const MainMoreScreen = () => {
 
     // navigation
     const navigation = useNavigation();
+    const dispatch = useDispatch();
     const __ = usePolyglot();
 
     // function for mapping sections
@@ -42,6 +48,9 @@ const MainMoreScreen = () => {
                                         break;
                                     case 'career':
                                         console.log("A");
+                                        break;
+                                    case 'logout': 
+                                        dispatch(updateToken(null));
                                         break;
                                     default:
                                         console.log("B");

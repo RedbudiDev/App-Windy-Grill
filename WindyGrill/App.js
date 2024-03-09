@@ -1,18 +1,32 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, View } from 'react-redux';
+import Loading from './src/components/Loading';
 import Router from './src/navigation/Router';
 import { checkIfUserLoggedIn } from './src/redux/actions/AuthActions';
 import { checkIfLanguageSelected } from './src/redux/actions/LanguageActions';
 
 export const App = () => {
   const dispatch = useDispatch();
-
-  React.useEffect(() => {
+  const [loading, setLoading] = React.useState(false);
+  function _fetchAll() {
     dispatch(checkIfLanguageSelected());
     dispatch(checkIfUserLoggedIn());
+    setTimeout(() =>{
+      setLoading(false);
+    }, 1000);
+  }
+
+  React.useEffect(() => {
+    setLoading(true);
+    _fetchAll();
   }, []);
+  if(loading){
+    return(
+      <Loading />
+    )
+  }
   return (
-      <Router />
+    <Router />
   );
 }
 

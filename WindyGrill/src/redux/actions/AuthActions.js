@@ -12,8 +12,13 @@ export const updateTokenState = (data) => {
 export const updateToken = (data) => {
     return async (dispatch) => {
         try {
-            await AsyncStorage.setItem(asyncKeys.tokenKey, data);
-            await dispatch(updateTokenState(data));
+            if(data){
+                await AsyncStorage.setItem(asyncKeys.tokenKey, data);
+                await dispatch(updateTokenState(data));
+            } else {
+                await AsyncStorage.removeItem(asyncKeys.tokenKey);
+                await dispatch(updateTokenState(null));
+            }
         } catch (error) {
             console.log("Error", error);
         }

@@ -6,6 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 import usePolyglot from '../../../hooks/usePolyglot';
 import { fetchData } from '../../../services/FetchClient';
 
+import { updateToken } from '../../../redux/actions/AuthActions';
+
 import Button from '../../../components/Button';
 import Input from '../../../components/Input';
 import SectionTitle from '../../../components/SectionTitle';
@@ -55,14 +57,15 @@ const LoginScreen = () => {
             const validationData = _validateData();
             const { message, success } = validationData;
             if (success) {
-                const url = "integration/customer/token";
+                const url = "/integration/customer/token";
                 const methode = "POST";
                 const data = {
                     username: email,
                     password: password
                 }
                 const response = await fetchData(url, methode, data, null);
-                console.log("Token:", response);
+                const token = response?.data;
+                dispatch(updateToken(token));
                 setLoading(false);
             } else {
                 setLoading(false);
@@ -74,7 +77,7 @@ const LoginScreen = () => {
                 });
             }
         } catch (error) {
-            const status = error?.message?.response?.status;                
+            const status = error?.message?.response?.status;
             setLoading(false);
             if (status !== undefined) {
                 switch (status) {
@@ -115,7 +118,7 @@ const LoginScreen = () => {
     }
 
     // main return
-    if(loading) {
+    if (loading) {
         return <Loading />
     }
     return (

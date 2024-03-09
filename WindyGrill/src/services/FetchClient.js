@@ -7,9 +7,7 @@ export async function fetchData(url, methode, data, token) {
         let responseObj = {
             success: true,
             message: 'Success',
-            data: {
-              ...response
-          }
+            data: response
         }
         return Promise.resolve(responseObj);
     } catch (error) {
