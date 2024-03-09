@@ -70,9 +70,41 @@ export const dictionary = {
         'Ime',
         'First name'
     ],
+    'Prezime': [
+        'Prezime',
+        'Last name'
+    ],
     'Adresa': [
         'Adresa',
         'Address'
+    ],
+    'Unesite Korisničko ime' :[
+        'Unesite Korisničko ime.',
+        'Username field empty.'
+    ],
+    'Unesite Ime': [
+        'Unesite Ime',
+        'First name field empty.'
+    ],
+    'Unesite Prezime': [
+        'Unesite Prezime',
+        'Last name field empty'
+    ],
+    'Unesite email': [
+        'Unesite email',
+        'Email field empty',
+    ],
+    'Unesite šifru': [
+        'Unesite šifru',
+        'Password field empty'
+    ],
+    'Došlo je do greške': [
+        'Došlo je do greške',
+        'Somthing went wrong'
+    ],
+    'Uspešno ste se registrovali': [
+        'Uspešno ste se registrovali',
+        'Success'
     ],
 
     // *** Login Screen ***
