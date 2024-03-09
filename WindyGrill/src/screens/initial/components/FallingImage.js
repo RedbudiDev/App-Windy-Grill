@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Image, Animated, Dimensions } from 'react-native';
+import { appColors } from '../../../helper/colors';
 import { appIcons } from '../../../helper/icons';
 
 const FallingImage = (props) => {
@@ -45,13 +46,13 @@ const FallingImage = (props) => {
 
 
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, backgroundColor: appColors.black, justifyContent: 'center', alignItems: 'center' }}>
             <Animated.View style={{
                 width: 250,
                 height: 80,
                 borderTopLeftRadius: 150,
                 borderTopRightRadius: 150,
-                backgroundColor: 'orange',
+                backgroundColor: appColors.baseColorDarker,
                 overflow: 'hidden',
                 transform: [
                     {
@@ -60,10 +61,10 @@ const FallingImage = (props) => {
                 ]
             }} />
             <Animated.Image
-                source={appIcons.more}
+                source={appIcons.logo}
                 style={{
-                    width: 250,
-                    height: 80,
+                    width: 125,
+                    height: 125,
                     transform: [{ translateX: burgerAnim }],
 
                 }}
@@ -74,7 +75,7 @@ const FallingImage = (props) => {
                 height: 80,
                 borderBottomLeftRadius: 150,
                 borderBottomRightRadius: 150,
-                backgroundColor: 'orange',
+                backgroundColor: appColors.baseColorDarker,
                 overflow: 'hidden',
                 transform: [
                     {

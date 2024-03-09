@@ -65,9 +65,10 @@ const ForgotPasswordScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: appColors.baseColor
     },
     mainContentContainer: {
-        backgroundColor: appColors.white,
+        backgroundColor: appColors.background,
         paddingVertical: 25,
         borderRadius: 5,
         shadowColor: '#000',

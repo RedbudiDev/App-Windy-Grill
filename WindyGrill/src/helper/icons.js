@@ -9,4 +9,6 @@ export const appIcons = {
     map: require('../../assets/icons/map.png'),
     burgerImage: require('../../assets/icons/burgerImage.png'),
     reorder: require('../../assets/icons/reorder.png'),
+    logo: require('../../assets/icons/logo.png'),
+    logowide: require('../../assets/icons/logowide.png'),
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
 import { appColors } from '../helper/colors';
 import { appIcons } from '../helper/icons';
 
@@ -25,6 +25,12 @@ const Header = (props) => {
                     />
                 </TouchableOpacity>
             )
+        } else {
+            return (
+                <View
+                    style={{ width: 35, height: 35 }}
+                />
+            )
         }
     }
     // function for rendering right icon
@@ -41,14 +47,24 @@ const Header = (props) => {
                     />
                 </TouchableOpacity>
             )
+        } else {
+            return (
+                <View
+                    style={{ width: 35, height: 35 }}
+                />
+            )
         }
     }
     return (
         <View style={{ marginVertical: 10, paddingHorizontal: 10 }}>
             <View style={styles.container}>
                 {_renderLeftIcon()}
-                {/** TODO: header image render */}
-                <Text style={{ color: appColors.black }}>Header Image</Text>
+                <View>
+                    <Image
+                        style={{ width: 70, height: 70 }}
+                        source={appIcons.logo}
+                    />
+                </View>
                 {_renderRightIcon()}
             </View>
             <View style={{ marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
@@ -66,7 +82,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
     }
 })
 

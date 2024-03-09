@@ -21,9 +21,7 @@ const InitialScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: appColors.background,
-        justifyContent: 'center',
-        alignItems: 'center'
+        backgroundColor: appColors.black,
     }
 });
 
