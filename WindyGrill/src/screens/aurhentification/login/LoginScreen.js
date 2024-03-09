@@ -67,6 +67,12 @@ const LoginScreen = () => {
                 const token = response?.data;
                 dispatch(updateToken(token));
                 setLoading(false);
+                Toast.show({
+                    text1: __("Uspešno ste se ulogovali"),
+                    type: 'success',
+                    position: 'top',
+                    visibilityTime: 1500
+                });
             } else {
                 setLoading(false);
                 Toast.show({

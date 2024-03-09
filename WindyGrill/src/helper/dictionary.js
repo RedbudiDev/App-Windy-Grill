@@ -120,6 +120,10 @@ export const dictionary = {
         'Nemate nalog?',
         'Do not have an account?'
     ],
+    'Uspešno ste se ulogovali': [
+        'Uspešno ste se ulogovali',
+        'Successfully logged in'
+    ],
 
     // *** Forgot Password ***
     'Zaboravljena lozinka': [
