@@ -5,13 +5,14 @@ import {
     ActivityIndicator,
     Platform
 } from 'react-native';
+import { appColors } from '../helper/colors';
 
 const Loading = () => {
     return (
         <View style={styles.container}>
             <ActivityIndicator
                 size={Platform.OS === 'ios' ? 'large' : 40}
-                color={'#000'}
+                color={appColors.baseColor}
             />
         </View>
     )
