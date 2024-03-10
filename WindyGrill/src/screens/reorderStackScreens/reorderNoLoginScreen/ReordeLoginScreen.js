@@ -10,6 +10,7 @@ import SectionTitle from "../../../components/SectionTitle";
 
 import { appColors } from "../../../helper/colors";
 import { appIcons } from "../../../helper/icons";
+import { screens } from "../../../helper/strings";
 
 const ReorderLoginScreen = () => {
     const navigation = useNavigation();
@@ -58,7 +59,7 @@ const ReorderLoginScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: appColors.background
+        backgroundColor: appColors.baseColor
     },
     containerRightSectionIcon: {
         flexDirection: 'row',

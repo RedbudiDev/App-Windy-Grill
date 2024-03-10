@@ -54,6 +54,10 @@ export const dictionary = {
         'Podešavanja',
         'Settings'
     ],
+    'Odjavi se': [
+        'Odjavi se',
+        'Log out'
+    ],
     
     // other on main scree of more tab:
     'Nalog':[

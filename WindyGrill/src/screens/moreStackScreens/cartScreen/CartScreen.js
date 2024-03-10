@@ -7,6 +7,7 @@ import Header from '../../../components/Header';
 import SectionTitle from '../../../components/SectionTitle';
 
 import { screens } from '../../../helper/strings';
+import { appColors } from '../../../helper/colors';
 
 const CartScreen = () => {
 
@@ -31,7 +32,8 @@ const CartScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: appColors.baseColor
     }
 })
 

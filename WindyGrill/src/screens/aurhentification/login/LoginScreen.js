@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView, TouchableOpacity, Image } from 'react-native';
 
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +16,7 @@ import Loading from '../../../components/Loading';
 
 import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
+import { appIcons } from '../../../helper/icons';
 
 const LoginScreen = () => {
 
@@ -135,7 +136,7 @@ const LoginScreen = () => {
                     {/** SECTION TITLE: */}
                     <SectionTitle
                         text={__("Uloguj se").toUpperCase()}
-                        customContainerStyle={{ alignSelf: 'center', marginTop: 40 }}
+                        customContainerStyle={{ alignSelf: 'center', marginTop: 10 }}
                     />
 
                     {/** fields */}

@@ -9,6 +9,7 @@ const Header = (props) => {
         showRightIcon = false, // prop for showint right icon
         onLeftIconPress = () => { }, // prop for click on left icpn
         onRightIconPress = () => { }, // prop for click on right icon
+        showLocationText = true, // prop for showing location text + image
     } = props;
 
     // function for rendering left icon
@@ -55,6 +56,22 @@ const Header = (props) => {
             )
         }
     }
+
+    const _renderLocationText = () => {
+        if(showLocationText) {
+            return (
+                <View style={{ marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+                    <Image
+                        source={appIcons.map}
+                        style={{ width: 28, height: 28 }}
+                    />
+                    <Text style={{ marginLeft: 5, color: appColors.black }} numberOfLines={2}>Svetog save 42, sprat 5, stan nn.</Text>
+                </View> 
+            )
+        } else {
+            return null
+        }
+    }
     return (
         <View style={{ marginVertical: 10, paddingHorizontal: 10 }}>
             <View style={styles.container}>
@@ -67,13 +84,7 @@ const Header = (props) => {
                 </View>
                 {_renderRightIcon()}
             </View>
-            <View style={{ marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
-                <Image
-                    source={appIcons.map}
-                    style={{ width: 28, height: 28 }}
-                />
-                <Text style={{ marginLeft: 5, color: appColors.black }} numberOfLines={2}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
-            </View>
+            {_renderLocationText()}
         </View>
     )
 }

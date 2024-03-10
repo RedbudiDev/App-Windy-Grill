@@ -13,17 +13,18 @@ const ProductItem = (props) => {
     return (
         <TouchableOpacity
             activeOpacity={0.7}
-            style = {{...styles.container, backgroundColor: type === 'one' ? appColors.white : appColors.backgroundDarker}}
+            style = {{...styles.container, backgroundColor: type === 'one' ? appColors.white : appColors.white}}
             onPress={() => {onItemPress()}}
         >
-            <View style = {{...styles.imageContainer, backgroundColor: type === 'one' ? appColors.appColor : appColors.white }}>
+            <View style = {{...styles.imageContainer, backgroundColor: appColors.baseColorDarker }}>
                 <Image 
                     source={appIcons.burgerImage}
                     style={styles.image}
+                    resizeMode={'contain'}
                 />
             </View>
             <View style = {styles.textContainer}>
-                <Text style = {{...styles.text, color: type === 'one' ? appColors.textGray : appColors.black}}>{"BURGER KING EXTRA LARGE TRIPLE"}</Text>
+                <Text style = {{...styles.text, color: type === 'one' ? appColors.textGray : appColors.textGray}}>{"BURGER KING EXTRA LARGE TRIPLE"}</Text>
             </View>
         </TouchableOpacity>
     )
@@ -41,16 +42,16 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         borderRadius: 10,
-        backgroundColor: appColors.appColor, 
+        backgroundColor: appColors.baseColorDarker, 
         height: 100, 
         width: Dimensions.get('screen').width / 2.8,
         justifyContent: 'center',
         alignItems: 'center'
     },  
     image: {
-        width: Dimensions.get('screen').width / 3, 
-        height: 80,
-        backgroundColor: appColors.appColor,
+        width: '90%', 
+        height: '85%',
+        backgroundColor: appColors.white,
         borderRadius: 10
     },
     text: {

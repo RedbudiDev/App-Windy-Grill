@@ -23,7 +23,6 @@ const Button = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        
         backgroundColor: appColors.red,
         width: Dimensions.get('screen').width - 40,
         borderRadius: 20,
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     },
     text: {
         padding: 20,
-        color: appColors.white,
+        color: appColors.backgroundDarker,
         fontFamily: 'FlameRegular',
         fontSize: 18
     }

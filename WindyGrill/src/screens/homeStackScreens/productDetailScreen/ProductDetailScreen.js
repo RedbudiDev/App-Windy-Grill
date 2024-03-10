@@ -6,6 +6,7 @@ import Button from '../../../components/Button';
 import HeaderBackButton from '../../../components/HeaderBackButton';
 import SectionTitle from '../../../components/SectionTitle';
 import { appColors } from '../../../helper/colors';
+import { appIcons } from '../../../helper/icons';
 
 const ProductDetailScreen = () => {
     const navigation = useNavigation();
@@ -16,9 +17,12 @@ const ProductDetailScreen = () => {
                 <HeaderBackButton
                     onLeftIconPress={() => { navigation.goBack() }}
                 />
-                <View style={{ height: 180, backgroundColor: appColors.appColor }}>
-                    <View style={{ height: 130, width: Dimensions.get('screen').width / 1.7, backgroundColor: 'red', alignSelf: 'center', position: 'absolute', bottom: -40 }}>
-                    </View>
+                <View style={{ height: 140, backgroundColor: appColors.red }}>
+                    <Image
+                        resizeMode={'stretch'}
+                        source={appIcons.offerImageOne} 
+                        style={{ height: 150, width: '65%', backgroundColor: 'red', alignSelf: 'center', position: 'absolute', bottom: -60, borderRadius: 20 }}
+                    />
                 </View>
                 <View style={{ marginTop: 50 }} />
                 <SectionTitle
@@ -39,7 +43,8 @@ const ProductDetailScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: appColors.baseColor
     },
     priceText: {
         color: 'green',

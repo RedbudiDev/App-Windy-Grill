@@ -19,6 +19,7 @@ const OrderMainScreen = () => {
     const __ = usePolyglot();
 
     const [selectedCategory, setSelectedCategory] = React.useState(categories[0]);
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     const _renderCategories = () => {
         return (
@@ -27,7 +28,12 @@ const OrderMainScreen = () => {
                     <View key={i.toString()}>
                         <CategoryItem
                             item={item}
-                            onCategoryItemPress={() => { setSelectedCategory(item) }}
+                            onCategoryItemPress={() => { 
+                                setSelectedCategory(item);
+                                setSelectedIndex(i);
+                            }}
+                            selectedIndex = {selectedIndex}
+                            index = {i}
                         />
                     </View>
                 )
@@ -37,12 +43,12 @@ const OrderMainScreen = () => {
 
     const _renderSubCategories = () => {
         return (
-            <FlatList 
+            <FlatList
                 data={selectedCategory?.sub_categories}
-                renderItem={({item, index}) => {
+                renderItem={({ item, index }) => {
                     return (
-                        <SubCategoryItem 
-                            item = {item}
+                        <SubCategoryItem
+                            item={item}
                             onSubCategoryItemPress={() => { navigation.navigate(screens.productDetailOrderTabScreen) }}
                         />
                     )
@@ -52,8 +58,8 @@ const OrderMainScreen = () => {
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
                 numColumns={2}
-                contentContainerStyle={{marginVertical: 10}}
-                columnWrapperStyle={{marginTop: 10}}
+                contentContainerStyle={{ marginVertical: 10 }}
+                columnWrapperStyle={{ marginTop: 10 }}
             />
         )
     }
@@ -74,7 +80,7 @@ const OrderMainScreen = () => {
                         </ScrollView>
                     </View>
                 </View>
-                <View style={{marginTop: 60, backgroundColor: 'blue'}}/>
+                <View style={{ marginTop: 60, backgroundColor: 'blue' }} />
                 {_renderSubCategories()}
             </ScrollView>
         </SafeAreaView>
@@ -85,7 +91,7 @@ const OrderMainScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: appColors.background
+        backgroundColor: appColors.baseColor
     },
     textTitle: {
         fontFamily: 'FlameBold',

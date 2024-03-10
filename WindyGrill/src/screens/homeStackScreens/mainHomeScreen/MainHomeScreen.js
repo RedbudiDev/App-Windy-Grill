@@ -34,7 +34,7 @@ const MainHomeScreen = () => {
     // function for rendering some of products
     const _renderProducts = () => {
         return (
-            [1, 2, 3].map((item, i) => {
+            [1, 2, 3, 4, 5, 6].map((item, i) => {
                 return (
                     <View key={i.toString()}>
                         <ProductItem
@@ -42,7 +42,6 @@ const MainHomeScreen = () => {
                             type = 'one'
                         />
                     </View>
-
                 )
             })
         )
@@ -76,12 +75,13 @@ const MainHomeScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: appColors.baseColor
     },
     sectionRightTextStyle: {
         fontFamily: 'FlameRegular',
         fontSize: 18,
-        color: 'orange'
+        color: appColors.red
     },
     productItemnContainer: {
         flexDirection: 'row',

@@ -108,8 +108,8 @@ const RegisterScreen = () => {
             // TODO: Handle messages + errors
             const status = error?.message?.response?.status;
             setLoading(false);
-            if(status !== undefined) {
-                switch(status) {
+            if (status !== undefined) {
+                switch (status) {
                     case 400:
                         Toast.show({
                             text1: error.message.response?.data?.message,
@@ -126,7 +126,7 @@ const RegisterScreen = () => {
                             visibilityTime: 1500
                         });
                         break;
-                    default: 
+                    default:
                         Toast.show({
                             text1: __("Došlo je do greške"),
                             type: 'error',
@@ -147,7 +147,7 @@ const RegisterScreen = () => {
     }
 
     // main return
-    if(loading) {
+    if (loading) {
         return <Loading />
     }
     return (
@@ -157,6 +157,7 @@ const RegisterScreen = () => {
                     <Header
                         showLeftIcon
                         onLeftIconPress={() => { navigation.goBack() }}
+                        showLocationText={false}
                     />
                     {/** SECTION TITLE: */}
                     <SectionTitle
@@ -210,7 +211,7 @@ const RegisterScreen = () => {
 
                         <Button
                             title={__("Registruj se").toUpperCase()}
-                            onPress={() => { 
+                            onPress={() => {
                                 setLoading(true);
                                 _doRegister();
                             }}
@@ -227,18 +228,18 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: appColors.baseColor
     },
-
     mainContentContainer: {
         paddingVertical: 25,
         borderRadius: 5,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
+        shadowColor: appColors.black,
+        shadowOffset: { width: 2, height: 2 },
         shadowOpacity: 0.2,
         shadowRadius: 1,
         elevation: 5,
         marginBottom: 20,
-        borderWidth: Platform.OS === "android" ? 0 : 1,
-        borderColor: appColors.textGray
+        borderColor: appColors.textGray,
+        marginHorizontal: 10,
+        alignItems: 'center',
     }
 })
 

@@ -98,11 +98,11 @@ const MainTabNavigator = () => {
                                         return (
                                             <View style={styles.labelContainer}>
                                                 <Image 
-                                                    style={{width: 30, height: 30}}
+                                                    style={{width: 25, height: 25}}
                                                     source={icon}
                                                     tintColor={focused ? appColors.red : appColors.black}
                                                 />
-                                                <Text style={{ fontFamily: 'FlameRegular', color: focused ? appColors.red : appColors.black }}>{labelTitle}</Text>
+                                                <Text style={{ marginTop: 4, fontFamily: 'FlameRegular', color: focused ? appColors.red : appColors.black }}>{labelTitle}</Text>
                                             </View>
                                         )
                                     }
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         height: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: appColors.white
+        backgroundColor: appColors.backgroundDarker
     }
 })
 

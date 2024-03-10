@@ -34,16 +34,18 @@ const SettingsScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: appColors.baseColor
     },
     mainContentContainer: {
         backgroundColor: appColors.white,
         paddingBottom: 25,
         borderRadius: 5,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
+        shadowColor: appColors.black,
+        shadowOffset: { width: 2, height: 2 },
         shadowOpacity: 0.2,
         shadowRadius: 1,
-        elevation: 5
+        elevation: 5,
+        marginHorizontal: 10,
     }
 })
 

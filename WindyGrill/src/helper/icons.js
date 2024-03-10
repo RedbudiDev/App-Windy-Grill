@@ -8,7 +8,9 @@ export const appIcons = {
     cart: require('../../assets/icons/cart.png'),
     map: require('../../assets/icons/map.png'),
     burgerImage: require('../../assets/icons/burgerImage.png'),
+    burgerImageOne: require('../../assets/icons/burgerImageOne.png'),
     reorder: require('../../assets/icons/reorder.png'),
     logo: require('../../assets/icons/logo.png'),
     logowide: require('../../assets/icons/logowide.png'),
+    offerImageOne: require('../../assets/icons/offerimageOne.jpeg'),
 }

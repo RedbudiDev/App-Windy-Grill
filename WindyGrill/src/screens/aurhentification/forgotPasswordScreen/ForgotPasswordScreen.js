@@ -25,8 +25,7 @@ const ForgotPasswordScreen = () => {
                     <Header
                         showLeftIcon
                         onLeftIconPress={() => { navigation.goBack() }}
-                        showRightIcon
-                        onRightIconPress={() => { navigation.navigate(screens.cartScreen) }}
+                        showLocationText={false}
                     />
 
                     {/** SECTION TITLE: */}
@@ -35,7 +34,7 @@ const ForgotPasswordScreen = () => {
                     />
                     {/** content */}
                     <View style={styles.mainContentContainer}>
-                        <Text style = {{marginHorizontal: 20, color: appColors.black}}>
+                        <Text style = {{marginHorizontal: 20, color: appColors.black, fontFamily: 'FlameRegular', textAlign: 'center'}}>
                             {
                                 __('Izgubili ste lozinku? Unesite svoje korisničko ime ili adresu e-pošte. Dobićete vezu za kreiranje nove lozinke putem e-pošte.')
                             }
@@ -68,15 +67,17 @@ const styles = StyleSheet.create({
         backgroundColor: appColors.baseColor
     },
     mainContentContainer: {
-        backgroundColor: appColors.background,
+        backgroundColor: appColors.white,
         paddingVertical: 25,
         borderRadius: 5,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
+        shadowColor: appColors.black,
+        shadowOffset: { width: 2, height: 2 },
         shadowOpacity: 0.2,
         shadowRadius: 1,
         elevation: 5,
-        marginBottom: 20
+        marginBottom: 20,
+        marginHorizontal: 10,
+        alignItems: 'center'
     }
 });
 

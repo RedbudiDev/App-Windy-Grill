@@ -29,7 +29,7 @@ const SliderItem = () => {
                     ]
                 }
                 source={appIcons.burgerImage}
-                resizeMode={'cover'}
+                resizeMode={'contain'}
             />
         </View>
     )
