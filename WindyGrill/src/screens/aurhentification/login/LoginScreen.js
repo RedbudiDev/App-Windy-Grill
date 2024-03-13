@@ -17,6 +17,7 @@ import Loading from '../../../components/Loading';
 import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
 import { appIcons } from '../../../helper/icons';
+import { globalStyles } from '../../../helper/globalStyles';
 
 const LoginScreen = () => {
 
@@ -166,7 +167,7 @@ const LoginScreen = () => {
                         onPress={() => { navigation.navigate(screens.forgotPasswordScreen) }}
                         style={styles.forgotContainer}
                     >
-                        <Text style={styles.forgotText}>{__("Zaboravljena lozinka")}</Text>
+                        <Text style={{...styles.forgotText, ...globalStyles.textFontSemiBold, color: appColors.white}}>{__("Zaboravljena lozinka") + "?"}</Text>
                     </TouchableOpacity>
 
                     {/** register butotn */}
@@ -174,10 +175,13 @@ const LoginScreen = () => {
                         <Text style={[styles.forgotText, { alignSelf: 'center' }]}>
                             {__("Nemate nalog?")}
                             <Text
-                                style={{ color: appColors.white }}
+                                style={{ 
+                                    color: appColors.white,
+                                    ...globalStyles.textFontSemiBold
+                                }}
                                 onPress={() => { navigation.navigate(screens.registerScreen) }}
                             >
-                                {"   " + __("Registruj se") + "."}
+                                {" " + __("Registruj se") + "."}
                             </Text>
                         </Text>
                     </View>
@@ -208,7 +212,7 @@ const styles = StyleSheet.create({
     },
     forgotText: {
         color: appColors.textGray,
-        fontFamily: 'FlameRegular'
+        ...globalStyles.textFontRegular
     },
     registerTextContainer: {
         marginHorizontal: 20,

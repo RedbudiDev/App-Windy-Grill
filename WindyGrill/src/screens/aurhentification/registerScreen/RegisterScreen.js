@@ -207,7 +207,6 @@ const RegisterScreen = () => {
                             secured={true}
                             customInputStyle={{ backgroundColor: appColors.white }}
                         />
-
                         <Button
                             title={__("Registruj se").toUpperCase()}
                             onPress={() => {
@@ -230,11 +229,6 @@ const styles = StyleSheet.create({
     mainContentContainer: {
         paddingVertical: 25,
         borderRadius: 5,
-        shadowColor: appColors.black,
-        shadowOffset: { width: 2, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 1,
-        elevation: 5,
         marginBottom: 20,
         borderColor: appColors.textGray,
         marginHorizontal: 10,

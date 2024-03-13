@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Dimensions } from 'react-native';
 import { appColors } from '../helper/colors';
+import { globalStyles } from '../helper/globalStyles';
 
 const Button = (props) => {
 
@@ -34,8 +35,9 @@ const styles = StyleSheet.create({
     text: {
         padding: 20,
         color: appColors.backgroundDarker,
-        fontFamily: 'FlameRegular',
-        fontSize: 18
+        fontSize: 18,
+        ...globalStyles.textFontBold,
+        color: appColors.white
     }
 })
 

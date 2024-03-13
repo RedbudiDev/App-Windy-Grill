@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { appColors } from '../helper/colors';
+import { globalStyles } from '../helper/globalStyles';
 
 const SectionTitle = (props) => {
     const {
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 34,
         color: appColors.white,
-        fontFamily: 'FlameBold'
+        ...globalStyles.textFontExtraBold
     }
 })
 

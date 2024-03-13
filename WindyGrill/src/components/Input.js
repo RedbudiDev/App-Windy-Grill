@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TextInput, Dimensions } from 'react-native';
 import { appColors } from '../helper/colors';
+import { globalStyles } from '../helper/globalStyles';
 
 
 const Input = (props) => {
@@ -28,6 +29,7 @@ const Input = (props) => {
                 autoCapitalize={'none'}
                 autoCorrect={false}
                 secureTextEntry={secured}
+                placeholderTextColor={appColors.textGray}
             />
         </View>
     )
@@ -46,10 +48,9 @@ const styles = StyleSheet.create({
             marginVertical: 10,
             borderRadius: 10,
             paddingHorizontal: 10,
-            fontFamily: "FlameRegular",
             color: appColors.black,
-            textAlignVertical: multiline ? "top" : "center"
-
+            textAlignVertical: multiline ? "top" : "center",
+            ...globalStyles.textFontRegular
         }
     }
 })
