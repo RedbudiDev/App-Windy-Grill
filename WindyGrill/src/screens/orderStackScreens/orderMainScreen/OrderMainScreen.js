@@ -12,6 +12,7 @@ import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
 
 import categories from './mock/categories.json';
+import { globalStyles } from '../../../helper/globalStyles';
 
 const OrderMainScreen = () => {
 
@@ -72,7 +73,7 @@ const OrderMainScreen = () => {
                     showRightIcon
                     onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
                 />
-                <View style={{ height: 90, backgroundColor: appColors.baseColor }}>
+                <View style={{ height: 100, backgroundColor: appColors.baseColor }}>
                     <Text style={styles.textTitle}>{__("Naš meni").toUpperCase()}</Text>
                     <View style={styles.scrollViewStyle}>
                         <ScrollView contentContainerStyle={{ paddingHorizontal: 15 }} horizontal showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} >
@@ -95,17 +96,15 @@ const styles = StyleSheet.create({
         backgroundColor: appColors.baseColor
     },
     textTitle: {
-        fontFamily: 'FlameBold',
         fontSize: 37,
         color: appColors.white,
         alignSelf: 'center',
-        marginTop: 10
+        marginTop: 10,
+        ...globalStyles.textFontExtraBold
     },
     scrollViewStyle: {
-        position: 'absolute',
         height: 120,
         width: '100%',
-        bottom: -80,
         justifyContent: 'center',
         alignItems: 'center',
     }

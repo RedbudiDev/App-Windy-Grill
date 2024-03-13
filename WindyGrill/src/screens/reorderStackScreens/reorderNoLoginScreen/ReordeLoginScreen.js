@@ -11,6 +11,7 @@ import SectionTitle from "../../../components/SectionTitle";
 import { appColors } from "../../../helper/colors";
 import { appIcons } from "../../../helper/icons";
 import { screens } from "../../../helper/strings";
+import { globalStyles } from "../../../helper/globalStyles";
 
 const ReorderLoginScreen = () => {
     const navigation = useNavigation();
@@ -26,7 +27,7 @@ const ReorderLoginScreen = () => {
                 <View>
                     <Image 
                         source={appIcons.reorder}
-                        style={{width: 30, height: 30}}
+                        style={{width: 25, height: 25}}
                         tintColor={appColors.white}
                     />
                 </View>
@@ -47,7 +48,7 @@ const ReorderLoginScreen = () => {
                 />
                 <Text style = {styles.textContent}>{__("Ups. Niste ulogovani.")}</Text>
                 <Button 
-                    title = {__("Uloguj se")}
+                    title = {__("Uloguj se").toUpperCase()}
                     customContainerStyle = {{width: Dimensions.get('screen').width / 1.7, marginTop: 30}}
                     onPress = {() => {console.log("Press!")}}
                 />
@@ -69,19 +70,19 @@ const styles = StyleSheet.create({
         opacity: 0.5,
         padding: 10,
         borderRadius: 20,
-        width: Dimensions.get('screen').width / 2.7
+        width: Dimensions.get('screen').width / 2.9
     },
     text: {
         fontSize: 17,
         color: appColors.white,
-        fontFamily: 'FlameRegular'
+        ...globalStyles.textFontSemiBold
     },
     textContent: {
-        fontFamily: 'FlameRegular',
-        color: appColors.black,
         fontSize: 20,
         alignSelf: 'center',
-        marginTop: 20
+        marginTop: 20,
+        ...globalStyles.textFontRegular,        
+        color: appColors.black,
     }
 })
 

@@ -10,6 +10,7 @@ import Input from '../../../components/Input';
 
 import { screens } from '../../../helper/strings';
 import { appColors } from '../../../helper/colors';
+import { globalStyles } from '../../../helper/globalStyles';
 
 const FeedbackScreen = () => {
 
@@ -53,7 +54,7 @@ const FeedbackScreen = () => {
                         <Button
                             title={__("Ostavite sliku")}
                             onPress={() => { console.log("Upload photo") }}
-                            customTitleStyle={{ fontSize: 14, color: appColors.black, alignSelf: 'flex-start' }}
+                            customTitleStyle={{ ...globalStyles.textFontRegular, fontSize: 14, color: appColors.black, alignSelf: 'flex-start' }}
                             customContainerStyle={{ backgroundColor: appColors.white, borderWidth: 1 }}
                         />
                         <Button

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { appColors } from '../../../../helper/colors';
+import { globalStyles } from '../../../../helper/globalStyles';
 import { appIcons } from '../../../../helper/icons';
 
 const CategoryItem = (props) => {
@@ -18,7 +19,7 @@ const CategoryItem = (props) => {
             style={{ alignItems: 'center' }}
         >
             <Image
-                style={index === selectedIndex ? { width: 140, height: 95 } : { width: 150, height: 80 }}
+                style={index === selectedIndex ? { width: 140, height: 90 } : { width: 150, height: 80 }}
                 source={appIcons.burgerImageOne}
                 resizeMode={'contain'}
             />
@@ -49,10 +50,10 @@ const styles = StyleSheet.create({
         borderColor: appColors.black
     },
     titleStyle: {
-        fontFamily: 'FlameRegular',
         fontSize: 15,
         color: appColors.black,
-        marginTop: 5
+        marginTop: 4,
+        ...globalStyles.textFontSemiBold
     }
 });
 

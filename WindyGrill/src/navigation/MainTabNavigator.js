@@ -1,7 +1,6 @@
 import { StyleSheet, View, Text, Image, Dimensions } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import usePolyglot from '../hooks/usePolyglot';
-import {} from '@react-navigation/native';
 
 import HomeTabStack from './stacks/HomeTabStack';
 import OffersTabStack from './stacks/OffersTabStack';
@@ -9,6 +8,7 @@ import OrderTabStack from './stacks/OrderTabStack';
 import ReorderTabStack from './stacks/ReorderTabStack';
 import MoreTabStack from './stacks/MoreTabStack';
 
+import { globalStyles } from '../helper/globalStyles';
 import { screens } from '../helper/strings';
 import { appColors } from '../helper/colors';
 import { appIcons } from '../helper/icons';
@@ -98,12 +98,12 @@ const MainTabNavigator = () => {
                                     tabBarIcon: ({ focused }) => {
                                         return (
                                             <View style={styles.labelContainer}>
-                                                <Image 
-                                                    style={{width: 25, height: 25}}
+                                                <Image
+                                                    style={{ width: 25, height: 25 }}
                                                     source={icon}
                                                     tintColor={focused ? appColors.red : appColors.black}
                                                 />
-                                                <Text style={{ marginTop: 4, fontFamily: 'FlameRegular', color: focused ? appColors.red : appColors.black }}>{labelTitle}</Text>
+                                                <Text style={[styles.textLabel, { color: focused ? appColors.red : appColors.black }]}>{labelTitle}</Text>
                                             </View>
                                         )
                                     }
@@ -126,6 +126,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: appColors.backgroundDarker
+    },
+    textLabel: {
+        marginTop: 4,
+        ...globalStyles.textFontSemiBold
     }
 })
 

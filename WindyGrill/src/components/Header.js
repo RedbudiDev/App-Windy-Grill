@@ -65,7 +65,6 @@ const Header = (props) => {
                 <Image
                     style={{ width: 250, height: 60, marginBottom: 15 }}
                     source={appIcons.logowide}
-                    resizeMode={'center'}
                 />
                 {_renderRightIcon()}
             </View>

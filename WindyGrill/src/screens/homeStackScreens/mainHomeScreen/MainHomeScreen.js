@@ -9,6 +9,7 @@ import SectionTitle from "../../../components/SectionTitle";
 import BannerSlider from "./components/BannerSlider";
 import SubCategoryItem from "../../orderStackScreens/orderMainScreen/components/SubCategoryItem";
 
+import { globalStyles } from "../../../helper/globalStyles";
 import { screens } from "../../../helper/strings";
 import { appColors } from "../../../helper/colors";
 
@@ -83,9 +84,9 @@ const styles = StyleSheet.create({
         backgroundColor: appColors.baseColor
     },
     sectionRightTextStyle: {
-        fontFamily: 'FlameRegular',
         fontSize: 18,
-        color: appColors.red
+        color: appColors.red,
+        ...globalStyles.textFontSemiBold
     },
     productItemnContainer: {
         flexDirection: 'row',

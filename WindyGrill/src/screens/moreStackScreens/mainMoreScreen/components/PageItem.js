@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, Dimensions, Image, TouchableOpacity} from 'react
 import usePolyglot from '../../../../hooks/usePolyglot';
 import { appColors } from '../../../../helper/colors';
 import { appIcons } from '../../../../helper/icons';
+import { globalStyles } from '../../../../helper/globalStyles';
 
 const PageItem = (props) => {
 
@@ -53,8 +54,8 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 18,
         color: appColors.textGray,
-        fontFamily: 'FlameRegular',
-        paddingLeft: 10
+        paddingLeft: 10,
+        ...globalStyles.textFontRegular
     }
 })
 

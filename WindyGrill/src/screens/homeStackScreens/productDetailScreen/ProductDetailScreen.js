@@ -9,6 +9,7 @@ import SectionTitle from '../../../components/SectionTitle';
 
 import { appColors } from '../../../helper/colors';
 import { appIcons } from '../../../helper/icons';
+import { globalStyles } from '../../../helper/globalStyles';
 
 const ProductDetailScreen = () => {
     const navigation = useNavigation();
@@ -49,19 +50,19 @@ const styles = StyleSheet.create({
     },
     priceText: {
         color: appColors.white,
-        fontFamily: 'FlameRegular',
         marginLeft: 10,
         fontSize: 30,
         marginTop: 20,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        ...globalStyles.textFontSemiBold
     },
     descriptionText: {
-        fontFamily: 'FlameRegular',
         fontSize: 17,
-        color: appColors.textGray,
+        color: appColors.black,
         marginHorizontal: 10,
         marginTop: 20,
-        textAlign: 'justify'
+        textAlign: 'justify',
+        ...globalStyles.textFontRegular
     },
     line: {
         height: 1,

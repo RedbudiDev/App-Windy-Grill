@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateLanguage, updateLanguageValue } from '../../../../redux/actions/LanguageActions';
-
 import usePolyglot from '../../../../hooks/usePolyglot';
+import { updateLanguage } from '../../../../redux/actions/LanguageActions';
+
+import { globalStyles } from '../../../../helper/globalStyles';
 import { appColors } from '../../../../helper/colors';
 
 const LanguageSwitch = () => {
@@ -53,8 +54,8 @@ const styles = StyleSheet.create({
     textStyle: {
         fontSize: 18,
         color: appColors.textGray,
-        fontFamily: 'FlameRegular',
-        marginTop: 10
+        marginTop: 10,
+        ...globalStyles.textFontRegular
     },
     subContainer: {
         flexDirection: 'row',
@@ -76,15 +77,14 @@ const styles = StyleSheet.create({
         backgroundColor: appColors.red
     },
     textSelection: {
-        fontSize: 15,
+        fontSize: 14,
         color: appColors.textGray,
-        fontFamily: 'FlameRegular'
+        ...globalStyles.textFontRegular
     },
     textSelectionSelected: {
-        fontSize: 15,
+        fontSize: 14,
         color: appColors.white,
-        fontFamily: 'FlameRegular'
-
+        ...globalStyles.textFontRegular
     }
 })
 

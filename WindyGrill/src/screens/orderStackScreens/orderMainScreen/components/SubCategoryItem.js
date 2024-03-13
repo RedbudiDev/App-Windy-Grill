@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
 import Button from '../../../../components/Button';
+
+import { globalStyles } from '../../../../helper/globalStyles';
 import { appColors } from '../../../../helper/colors';
 import { appIcons } from '../../../../helper/icons';
 
@@ -21,29 +23,29 @@ const SubCategoryItem = (props) => {
     }
     return (
         <>
-         <View style = {{justifyContent: 'center', alignItems: 'center'}}>
-            <TouchableOpacity
-                style={styles.container}
-                onPress={() => { onSubCategoryItemPress() }}
-                activeOpacity={0.5}
-                oneByRow={false}
-            >
-                <Image
-                    style={oneByRow ? styles.imageLarge : styles.imageLarge}
-                    source={appIcons.burgerImage}
-                />
-                <Text style={oneByRow ? styles.descriptionLarge : styles.description}>{item?.title ? item?.title : 'Title text'}</Text>
-                <Text style={oneByRow ? styles.priceTextLarge : styles.priceText}>{"400 RSD"}</Text>
-                <Text style={oneByRow ? styles.shortDescriptionLarge : styles.shortDescription}>{"Lorem ispum ksmdka madadada frfa"}</Text>
-                <Button
-                    title={"Kupi"}
-                    customContainerStyle={oneByRow ? styles.buttonContainerLarge : styles.buttonContainer}
-                    customTitleStyle={{ padding: 0 }}
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <TouchableOpacity
+                    style={oneByRow ? styles.containerLarge : styles.container}
                     onPress={() => { onSubCategoryItemPress() }}
-                />
-            </TouchableOpacity>
-            {_renderLine()}
-         </View>
+                    activeOpacity={0.5}
+                    oneByRow={false}
+                >
+                    <Image
+                        style={oneByRow ? styles.imageLarge : styles.imageLarge}
+                        source={appIcons.burgerImage}
+                    />
+                    <Text style={oneByRow ? styles.descriptionLarge : styles.description}>{item?.title ? item?.title : 'Title text'}</Text>
+                    <Text style={oneByRow ? styles.priceTextLarge : styles.priceText}>{"400 RSD"}</Text>
+                    <Text style={oneByRow ? styles.shortDescriptionLarge : styles.shortDescription}>{"Lorem ispum ksmdka madadada frfa"}</Text>
+                    <Button
+                        title={"Kupi"}
+                        customContainerStyle={oneByRow ? styles.buttonContainerLarge : styles.buttonContainer}
+                        customTitleStyle={{ padding: 0, color: appColors.white }}
+                        onPress={() => { onSubCategoryItemPress() }}
+                    />
+                </TouchableOpacity>
+                {_renderLine()}
+            </View>
 
         </>
     )
@@ -58,39 +60,47 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    containerLarge: {
+        width: (Dimensions.get('screen').width - 20) / 1.5,
+        backgroundColor: appColors.white,
+        marginHorizontal: 5,
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     description: {
-        fontFamily: 'FlameBold',
         fontSize: 25,
         color: appColors.black,
-        textAlign: 'center'
+        textAlign: 'center',
+        ...globalStyles.textFontBold
+    },
+    descriptionLarge: {
+        fontSize: 30,
+        color: appColors.black,
+        textAlign: 'center',
+        ...globalStyles.textFontBold
     },
     priceText: {
         fontSize: 17,
         color: appColors.red,
-        fontFamily: 'FlameBold'
+        ...globalStyles.textFontSemiBold
     },
     priceTextLarge: {
         fontSize: 22,
         color: appColors.red,
-        fontFamily: 'FlameBold'
-    },
-    descriptionLarge: {
-        fontFamily: 'FlameBold',
-        fontSize: 30,
-        color: appColors.black,
-        textAlign: 'center'
+        ...globalStyles.textFontSemiBold
     },
     shortDescription: {
-        fontFamily: 'FlameRegular',
         fontSize: 17,
         color: appColors.textGray,
-        textAlign: 'center'
+        textAlign: 'center',
+        ...globalStyles.textFontRegular
     },
     shortDescriptionLarge: {
-        fontFamily: 'FlameRegular',
         fontSize: 22,
         color: appColors.textGray,
-        textAlign: 'center'
+        textAlign: 'center',
+        ...globalStyles.textFontRegular
     },
     imageSmall: {
         width: 100,

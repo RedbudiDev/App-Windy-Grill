@@ -21,7 +21,7 @@ const SettingsScreen = () => {
                 />
                 {/** title */}
                 <SectionTitle
-                    text={__("Podešavanja")}
+                    text={__("Podešavanja").toUpperCase()}
                 />
                 <View style = {styles.mainContentContainer}>
                     <LanguageSwitch />
@@ -40,11 +40,6 @@ const styles = StyleSheet.create({
         backgroundColor: appColors.white,
         paddingBottom: 25,
         borderRadius: 5,
-        shadowColor: appColors.black,
-        shadowOffset: { width: 2, height: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 1,
-        elevation: 5,
         marginHorizontal: 10,
     }
 })
