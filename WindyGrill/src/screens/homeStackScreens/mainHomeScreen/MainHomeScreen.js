@@ -5,9 +5,9 @@ import usePolyglot from "../../../hooks/usePolyglot";
 
 import Header from "../../../components/Header";
 import Button from "../../../components/Button";
-import ProductItem from "./components/ProductItem";
 import SectionTitle from "../../../components/SectionTitle";
 import BannerSlider from "./components/BannerSlider";
+import SubCategoryItem from "../../orderStackScreens/orderMainScreen/components/SubCategoryItem";
 
 import { screens } from "../../../helper/strings";
 import { appColors } from "../../../helper/colors";
@@ -37,9 +37,11 @@ const MainHomeScreen = () => {
             [1, 2, 3, 4, 5, 6].map((item, i) => {
                 return (
                     <View key={i.toString()}>
-                        <ProductItem
-                            onItemPress={() => { navigation.navigate(screens.productDetailHomeTabScreen) }}
-                            type = 'one'
+                        <SubCategoryItem
+                            item={item}
+                            onSubCategoryItemPress={() => { navigation.navigate(screens.productDetailHomeTabScreen) }}
+                            oneByRow={true}
+                            renderLine={true}
                         />
                     </View>
                 )
@@ -55,8 +57,8 @@ const MainHomeScreen = () => {
                     showRightIcon
                     onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
                 />
-                <BannerSlider 
-                    data = {images}
+                <BannerSlider
+                    data={images}
                 />
                 <Button
                     title={__("Započnite narudžbinu").toUpperCase()}
@@ -67,7 +69,9 @@ const MainHomeScreen = () => {
                     text={__("Ponude").toUpperCase()}
                     rightIcon={_renderSectionRightIcon}
                 />
-                {_renderProducts()}
+                <View style={{ backgroundColor: appColors.white, alignItems: 'center' }}>
+                    {_renderProducts()}
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
