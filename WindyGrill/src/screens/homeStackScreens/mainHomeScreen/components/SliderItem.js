@@ -25,7 +25,7 @@ const SliderItem = () => {
                 style={
                     [
                         styles.image,
-                        { transform: [{ translateY: translateYImage }] }
+                        // { transform: [{ translateY: translateYImage }] }
                     ]
                 }
                 source={appIcons.burgerImage}

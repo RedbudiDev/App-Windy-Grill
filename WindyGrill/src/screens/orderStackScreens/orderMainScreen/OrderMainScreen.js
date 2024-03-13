@@ -68,20 +68,18 @@ const OrderMainScreen = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView bounces={false} style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 0, flex: 1}} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
+            <ScrollView bounces={false} nestedScrollEnabled={true} contentContainerStyle={{ flex: 1}} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
                 <Header
                     showRightIcon
                     onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
                 />
-                <View style={{ height: 100, backgroundColor: appColors.baseColor }}>
+                <View style={{ backgroundColor: appColors.baseColor }}>
                     <Text style={styles.textTitle}>{__("Naš meni").toUpperCase()}</Text>
-                    <View style={styles.scrollViewStyle}>
-                        <ScrollView contentContainerStyle={{ paddingHorizontal: 15 }} horizontal showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} >
+                        <ScrollView scrollEnabled={true} nestedScrollEnabled={true} contentContainerStyle={{ paddingHorizontal: 15 }} horizontal showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} >
                             {_renderCategories()}
                         </ScrollView>
-                    </View>
                 </View>
-                <View style={{ marginTop: 95, backgroundColor: appColors.white, flex: 1 }}>
+                <View style={{ marginTop: 5, flex: 1, backgroundColor: appColors.white, flex: 1 }}>
                     {_renderSubCategories()}
                 </View>
             </ScrollView>
@@ -102,12 +100,6 @@ const styles = StyleSheet.create({
         marginTop: 10,
         ...globalStyles.textFontExtraBold
     },
-    scrollViewStyle: {
-        height: 120,
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-    }
 })
 
 export default OrderMainScreen;

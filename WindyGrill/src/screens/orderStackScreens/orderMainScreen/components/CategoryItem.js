@@ -16,7 +16,7 @@ const CategoryItem = (props) => {
         <TouchableOpacity
             activeOpacity={0.5}
             onPress={() => { onCategoryItemPress() }}
-            style={{ alignItems: 'center' }}
+            style={{ alignItems: 'center'}}
         >
             <Image
                 style={index === selectedIndex ? { width: 140, height: 90 } : { width: 150, height: 80 }}
@@ -37,17 +37,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: appColors.white,
         backgroundColor: appColors.white
-    },
-    containerSelected: {
-        height: 90,
-        marginHorizontal: 10,
-        width: 120,
-        alignItems: 'center',
-        borderRadius: 10,
-        borderColor: appColors.white,
-        backgroundColor: appColors.white,
-        borderWidth: 1,
-        borderColor: appColors.black
     },
     titleStyle: {
         fontSize: 15,

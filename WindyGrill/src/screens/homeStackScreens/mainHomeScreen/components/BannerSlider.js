@@ -12,7 +12,7 @@ const BannerSlider = (props) => {
         data = [], // prop for data in banner
     } = props;
 
-    const scrollX = useRef(new Animated.Value(0)).current;
+    const scrollX = useRef(new Animated.Value(0))?.current;
     const [index, setIndex] = useState(0);
 
     const _handleOnScroll = event => {
@@ -33,11 +33,11 @@ const BannerSlider = (props) => {
     }
 
     const _handleOnViewableItemsChanged = useRef(({ viewableItems }) => {
-        setIndex(viewableItems[0].index);
+        setIndex(viewableItems[0]?.index);
     }).current;
 
     const viewabilityConfig = useRef({
-        itemVisiblePercentThreshold: 50
+        itemVisiblePercentThreshold: 80
     }).current;
 
     return (

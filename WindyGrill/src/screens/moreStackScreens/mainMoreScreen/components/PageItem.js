@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: appColors.textGray,
         paddingLeft: 10,
-        ...globalStyles.textFontRegular
+        ...globalStyles.textFontSemiBold
     }
 })
 

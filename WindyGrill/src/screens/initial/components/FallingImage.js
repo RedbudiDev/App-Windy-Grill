@@ -16,7 +16,7 @@ const FallingImage = (props) => {
         <View style={{ flex: 1, backgroundColor: appColors.baseColor, justifyContent: 'center', alignItems: 'center' }}>
             <LottieView
                 source={require('../../../../assets/animatios/lottieone.json')}
-                style={{ width: '100%', height: 500 }}
+                style={{ width: '100%', height: 280 }}
                 autoPlay
                 loop
             />
