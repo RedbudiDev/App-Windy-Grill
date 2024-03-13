@@ -12,7 +12,7 @@ const InitialScreen = () => {
     return (
         <View style={styles.container}>
             <FallingImage
-                doNavigate={() => { setTimeout(() => { navigation.replace(screens.separatedStack) }, 1000) }}
+                doNavigate={() => { setTimeout(() => { navigation.replace(screens.separatedStack) }, 1500) }}
             />
         </View>
     )

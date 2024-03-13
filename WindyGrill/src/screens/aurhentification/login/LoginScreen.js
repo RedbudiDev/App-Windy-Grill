@@ -3,8 +3,8 @@ import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView,
 
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
-import usePolyglot from '../../../hooks/usePolyglot';
 import { fetchData } from '../../../services/FetchClient';
+import usePolyglot from '../../../hooks/usePolyglot';
 
 import { updateToken } from '../../../redux/actions/AuthActions';
 
@@ -132,7 +132,11 @@ const LoginScreen = () => {
         <SafeAreaView style={styles.container}>
             <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "android" ? null : "padding"}>
                 <ScrollView bounces={false} style={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-
+                    {/** LOGO IMAGE */}
+                    <Image
+                        style={styles.logoImage}
+                        source={appIcons.logo}
+                    />
                     {/** SECTION TITLE: */}
                     <SectionTitle
                         text={__("Uloguj se").toUpperCase()}
@@ -170,10 +174,10 @@ const LoginScreen = () => {
                         <Text style={[styles.forgotText, { alignSelf: 'center' }]}>
                             {__("Nemate nalog?")}
                             <Text
-                                style={{ color: appColors.black }}
+                                style={{ color: appColors.white }}
                                 onPress={() => { navigation.navigate(screens.registerScreen) }}
                             >
-                                {" " + __("Registruj se") + "."}
+                                {"   " + __("Registruj se") + "."}
                             </Text>
                         </Text>
                     </View>
@@ -209,6 +213,11 @@ const styles = StyleSheet.create({
     registerTextContainer: {
         marginHorizontal: 20,
         marginTop: 10
+    },
+    logoImage: {
+        width: 150,
+        height: 150,
+        alignSelf: 'center'
     }
 })
 

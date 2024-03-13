@@ -1,5 +1,7 @@
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Dimensions } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import usePolyglot from '../hooks/usePolyglot';
+import {} from '@react-navigation/native';
 
 import HomeTabStack from './stacks/HomeTabStack';
 import OffersTabStack from './stacks/OffersTabStack';
@@ -10,7 +12,6 @@ import MoreTabStack from './stacks/MoreTabStack';
 import { screens } from '../helper/strings';
 import { appColors } from '../helper/colors';
 import { appIcons } from '../helper/icons';
-import usePolyglot from '../hooks/usePolyglot';
 
 const MainTabNavigator = () => {
 
@@ -75,8 +76,8 @@ const MainTabNavigator = () => {
                 tabBarActiveBackgroundColor: 'blue',
                 tabBarInactiveBackgroundColor: 'red',
                 tabBarStyle: {
-                    height: 70,
-                    backgroundColor: appColors.white
+                    height: Dimensions.get('screen').height / 10,
+                    backgroundColor: appColors.white,
                 }
             }}
         >

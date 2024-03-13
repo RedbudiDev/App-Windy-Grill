@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, ScrollView, SafeAreaView, View, KeyboardAvoidingView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import usePolyglot from '../../../hooks/usePolyglot';
 import { fetchData } from '../../../services/FetchClient';
+import usePolyglot from '../../../hooks/usePolyglot';
 
 import Header from '../../../components/Header';
 import SectionTitle from '../../../components/SectionTitle';
@@ -157,7 +157,6 @@ const RegisterScreen = () => {
                     <Header
                         showLeftIcon
                         onLeftIconPress={() => { navigation.goBack() }}
-                        showLocationText={false}
                     />
                     {/** SECTION TITLE: */}
                     <SectionTitle

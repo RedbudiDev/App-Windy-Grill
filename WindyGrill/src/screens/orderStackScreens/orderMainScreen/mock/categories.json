@@ -5,31 +5,31 @@
         "sub_categories": [
             {
                 "id": 1,
-                "title": "Sub Category one"
+                "title": "Sub Category"
             },
             {
                 "id": 2,
-                "title": "Sub Category two"
+                "title": "Sub Category"
             },
             {
                 "id": 3,
-                "title": "Sub Category three"
+                "title": "Sub Category"
             },
             {
                 "id": 4,
-                "title": "Sub Category four"
+                "title": "Sub Category"
             },
             {
                 "id": 5,
-                "title": "Sub Category fifth"
+                "title": "Sub Category"
             },
             {
                 "id": 6,
-                "title": "Sub Category sixth"
+                "title": "Sub Category"
             },
             {
                 "id": 7,
-                "title": "Sub Category seven"
+                "title": "Sub Category"
             }
         ]
     },

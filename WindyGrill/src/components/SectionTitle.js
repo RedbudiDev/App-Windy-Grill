@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     text: {
-        fontSize: 25,
-        color: appColors.black,
+        fontSize: 34,
+        color: appColors.white,
         fontFamily: 'FlameBold'
     }
 })

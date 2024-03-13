@@ -37,8 +37,8 @@ const OffersMainScreen = () => {
                     onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
                 />
                 <SectionTitle
-                    customContainerStyle={{ backgroundColor: appColors.red, height: 60 }}
-                    customTextStyle={{ color: appColors.white }}
+                    customContainerStyle={{ backgroundColor: appColors.baseColor, height: 40 }}
+                    customTextStyle={{ color: appColors.white, fontSize: 34 }}
                     text={__("Ponude").toUpperCase()}
                 />
                 {_renderProducts()}

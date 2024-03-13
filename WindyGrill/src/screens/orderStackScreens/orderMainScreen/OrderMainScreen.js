@@ -28,12 +28,12 @@ const OrderMainScreen = () => {
                     <View key={i.toString()}>
                         <CategoryItem
                             item={item}
-                            onCategoryItemPress={() => { 
+                            onCategoryItemPress={() => {
                                 setSelectedCategory(item);
                                 setSelectedIndex(i);
                             }}
-                            selectedIndex = {selectedIndex}
-                            index = {i}
+                            selectedIndex={selectedIndex}
+                            index={i}
                         />
                     </View>
                 )
@@ -58,7 +58,7 @@ const OrderMainScreen = () => {
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
                 numColumns={2}
-                contentContainerStyle={{ marginVertical: 10 }}
+                contentContainerStyle={{ paddingBottom: 20 }}
                 columnWrapperStyle={{ marginTop: 10 }}
             />
         )
@@ -67,12 +67,12 @@ const OrderMainScreen = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView bounces={false} style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 20 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
+            <ScrollView bounces={false} style={{ flex: 1 }} contentContainerStyle={{ paddingBottom: 0, flex: 1}} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
                 <Header
                     showRightIcon
                     onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
                 />
-                <View style={{ height: 100, backgroundColor: appColors.red }}>
+                <View style={{ height: 90, backgroundColor: appColors.baseColor }}>
                     <Text style={styles.textTitle}>{__("Naš meni").toUpperCase()}</Text>
                     <View style={styles.scrollViewStyle}>
                         <ScrollView contentContainerStyle={{ paddingHorizontal: 15 }} horizontal showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false} >
@@ -80,8 +80,9 @@ const OrderMainScreen = () => {
                         </ScrollView>
                     </View>
                 </View>
-                <View style={{ marginTop: 60, backgroundColor: 'blue' }} />
-                {_renderSubCategories()}
+                <View style={{ marginTop: 95, backgroundColor: appColors.white, flex: 1 }}>
+                    {_renderSubCategories()}
+                </View>
             </ScrollView>
         </SafeAreaView>
 
@@ -95,10 +96,10 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         fontFamily: 'FlameBold',
-        fontSize: 25,
+        fontSize: 37,
         color: appColors.white,
         alignSelf: 'center',
-        marginTop: 20
+        marginTop: 10
     },
     scrollViewStyle: {
         position: 'absolute',

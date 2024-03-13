@@ -1,88 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { View, Image, Animated, Dimensions } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
+import LottieView from 'lottie-react-native';
 import { appColors } from '../../../helper/colors';
-import { appIcons } from '../../../helper/icons';
 
 const FallingImage = (props) => {
-
     const {
-        doNavigate = () => {}
+        doNavigate = () => { } // prop for callback after 0.5 seconds 
     } = props;
-    
 
-    const [topBunAnim] = useState(new Animated.Value(-Dimensions.get('screen').height));
-    const [burgerAnim] = useState(new Animated.Value(-Dimensions.get('screen').width));
-    const [bottomBunAnim] = useState(new Animated.Value(Dimensions.get('screen').height * 2));
-
-    useEffect(() => {
-        const animateParts = () => {
-            const topBunAnimRef = Animated.timing(topBunAnim, {
-                toValue: 0,
-                duration: 500,
-                useNativeDriver: true,
-            });
-
-            const burgerAnimRef = Animated.timing(burgerAnim, {
-                toValue: 0,
-                duration: 500,
-                useNativeDriver: true,
-                delay: 0,
-            });
-
-            const bottomBunAnimRef = Animated.timing(bottomBunAnim, {
-                toValue: 0,
-                duration: 500,
-                useNativeDriver: true,
-                delay: 0,
-            });
-
-            // Sekvencijalno pokrećemo animacije koristeći Animated.sequence()
-            Animated.sequence([topBunAnimRef, burgerAnimRef, bottomBunAnimRef]).start(() => {
-                doNavigate()
-            });
-        };
-        animateParts();
-    }, []);
-
-
+    React.useEffect(() => {
+        doNavigate();
+    });
+    /** main return */
     return (
-        <View style={{ flex: 1, backgroundColor: appColors.black, justifyContent: 'center', alignItems: 'center' }}>
-            <Animated.View style={{
-                width: 250,
-                height: 80,
-                borderTopLeftRadius: 150,
-                borderTopRightRadius: 150,
-                backgroundColor: appColors.baseColorDarker,
-                overflow: 'hidden',
-                transform: [
-                    {
-                        translateY: topBunAnim
-                    }
-                ]
-            }} />
-            <Animated.Image
-                source={appIcons.logo}
-                style={{
-                    width: 125,
-                    height: 125,
-                    transform: [{ translateX: burgerAnim }],
-
-                }}
-                resizeMode="cover"
+        <View style={{ flex: 1, backgroundColor: appColors.baseColor, justifyContent: 'center', alignItems: 'center' }}>
+            <LottieView
+                source={require('../../../../assets/animatios/lottieone.json')}
+                style={{ width: '100%', height: 500 }}
+                autoPlay
+                loop
             />
-            <Animated.View style={{
-                width: 250,
-                height: 80,
-                borderBottomLeftRadius: 150,
-                borderBottomRightRadius: 150,
-                backgroundColor: appColors.baseColorDarker,
-                overflow: 'hidden',
-                transform: [
-                    {
-                        translateY: bottomBunAnim
-                    }
-                ]
-            }} />
         </View>
     );
 };

@@ -10,6 +10,7 @@ const Header = (props) => {
         onLeftIconPress = () => { }, // prop for click on left icpn
         onRightIconPress = () => { }, // prop for click on right icon
         showLocationText = true, // prop for showing location text + image
+        customContainerStyle = {} // prop for container style
     } = props;
 
     // function for rendering left icon
@@ -57,34 +58,17 @@ const Header = (props) => {
         }
     }
 
-    const _renderLocationText = () => {
-        if(showLocationText) {
-            return (
-                <View style={{ marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
-                    <Image
-                        source={appIcons.map}
-                        style={{ width: 28, height: 28 }}
-                    />
-                    <Text style={{ marginLeft: 5, color: appColors.black }} numberOfLines={2}>Svetog save 42, sprat 5, stan nn.</Text>
-                </View> 
-            )
-        } else {
-            return null
-        }
-    }
     return (
-        <View style={{ marginVertical: 10, paddingHorizontal: 10 }}>
+        <View style={{ paddingHorizontal: 10, ...customContainerStyle }}>
             <View style={styles.container}>
                 {_renderLeftIcon()}
-                <View>
-                    <Image
-                        style={{ width: 70, height: 70 }}
-                        source={appIcons.logo}
-                    />
-                </View>
+                <Image
+                    style={{ width: 250, height: 60, marginBottom: 15 }}
+                    source={appIcons.logowide}
+                    resizeMode={'center'}
+                />
                 {_renderRightIcon()}
             </View>
-            {_renderLocationText()}
         </View>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions, Image } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { appColors } from '../../../../helper/colors';
 import { appIcons } from '../../../../helper/icons';
 
@@ -15,16 +15,14 @@ const CategoryItem = (props) => {
         <TouchableOpacity
             activeOpacity={0.5}
             onPress={() => { onCategoryItemPress() }}
-            style={ index === selectedIndex ? styles.containerSelected : styles.container}
+            style={{ alignItems: 'center' }}
         >
-            <View style = {styles.imageContainer}>
             <Image
-                style={{ width: 100, height: 45 }}
+                style={index === selectedIndex ? { width: 140, height: 95 } : { width: 150, height: 80 }}
                 source={appIcons.burgerImageOne}
                 resizeMode={'contain'}
             />
-            </View>
-            <Text style={styles.titleStyle}>{item?.title}</Text>
+            <Text style={[styles.titleStyle, index === selectedIndex ? { fontSize: 17 } : {}]}>{item?.title}</Text>
         </TouchableOpacity>
     )
 }
@@ -47,22 +45,14 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: appColors.white,
         backgroundColor: appColors.white,
-        borderWidth: 1, 
+        borderWidth: 1,
         borderColor: appColors.black
     },
     titleStyle: {
         fontFamily: 'FlameRegular',
-        fontSize: 12,
+        fontSize: 15,
         color: appColors.black,
         marginTop: 5
-    },
-    imageContainer: {
-        backgroundColor: appColors.baseColorDarker,
-        borderRadius: 10,
-        height: '70%',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center'
     }
 });
 
