@@ -216,4 +216,8 @@ export const dictionary = {
         'Naš meni',
         'Our menu'
     ],
+    'Kupi':[ 
+        'Kupi',
+        'Buy'
+    ]
 }
