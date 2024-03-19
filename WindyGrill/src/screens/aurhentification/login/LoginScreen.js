@@ -59,7 +59,7 @@ const LoginScreen = () => {
             const validationData = _validateData();
             const { message, success } = validationData;
             if (success) {
-                const url = "/integration/customer/token";
+                const url = "all/V1/integration/customer/token";
                 const methode = "POST";
                 const data = {
                     username: email,

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://magnetic.redbudi.com/rest/all/V1';
+const BASE_URL = 'https://magnetic.redbudi.com/rest/';
 
 export const createAxiosInstance = (method, token) => {
     const instance = axios.create({

@@ -75,7 +75,7 @@ const RegisterScreen = () => {
             const validationData = _validateData();
             const { success, message } = validationData;
             if (success) {
-                const url = '/customers';
+                const url = 'all/V1/customers';
                 const data = {
                     customer: {
                         firstname: first_name,
