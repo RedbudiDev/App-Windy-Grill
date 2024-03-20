@@ -10,12 +10,14 @@ const Button = (props) => {
         onPress = () => { }, // callback for press on button
         customContainerStyle = {}, // prop for custom contaienr style
         customTitleStyle = {}, // prop for custom title text style
+        disabled = false
     } = props;
     return (
         <TouchableOpacity
             onPress={() => { onPress() }}
             style={[styles.container, customContainerStyle]}
             activeOpacity={0.7}
+            disabled={disabled}
         >
             <Text style={[styles.text, customTitleStyle]}>{title}</Text>
         </TouchableOpacity>

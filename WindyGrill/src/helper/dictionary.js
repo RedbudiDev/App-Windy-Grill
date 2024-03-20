@@ -185,6 +185,19 @@ export const dictionary = {
         'Izaberite jezik / Choose language'
     ],
 
+    // *** Users Screen ***
+    'Ažuriraj': [
+        'Ažuriraj',
+        'Update'
+    ],
+    'Uspešno ste ažurirali korisnika': [
+        'Uspešno ste ažurirali korisnika',
+        'You have successfully updated the user'
+    ],
+    'Zdravo': [
+        'Zdravo',
+        'Hello'
+    ],
     // *** HOME TAB *** 
 
     // *** Main Home Screen ***
