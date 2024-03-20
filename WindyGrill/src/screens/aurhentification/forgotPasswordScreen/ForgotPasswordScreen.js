@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import usePolyglot from '../../../hooks/usePolyglot';
+import { fetchData } from '../../../services/FetchClient';
 
 import Button from '../../../components/Button';
 import Header from '../../../components/Header';
@@ -14,6 +15,7 @@ import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
 
 const ForgotPasswordScreen = () => {
+
     const navigation = useNavigation();
     const __ = usePolyglot();
 
@@ -88,7 +90,15 @@ const ForgotPasswordScreen = () => {
             const validateData = _validateData();
             const { message, success } = validateData;
             if (success) {
-                console.log("Message:", message);
+                const url = 'all/V1/customers/resetPassword';
+                const methode = "POST";
+                const data = {
+                    newPassword: newPassword,
+                    email: email,
+                    resetToken: ''
+                };
+                const response = await fetchData(url, methode, data, null);
+                // TODO: api call for forgott password
             } else {
                 Toast.show({
                     text1: message,
@@ -120,7 +130,7 @@ const ForgotPasswordScreen = () => {
         }
     }
 
-
+    // main return
     return (
         <SafeAreaView style={styles.container}>
             <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "android" ? null : "padding"}>
