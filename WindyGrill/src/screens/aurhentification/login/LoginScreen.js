@@ -68,6 +68,7 @@ const LoginScreen = () => {
                 const response = await fetchData(url, methode, data, null);
                 const token = response?.data;
                 dispatch(updateToken(token));
+                console.log("Token:", token);
                 setLoading(false);
                 Toast.show({
                     text1: __("Uspešno ste se ulogovali"),

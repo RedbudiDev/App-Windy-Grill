@@ -1,21 +1,26 @@
 [
     {
         "id": 1,
+        "title": "Korisnik",
+        "action": "user"
+    },
+    {
+        "id": 2,
         "title": "Ostavite utiske",
         "action": "feedback"
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Karijere",
         "action": "careers"
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "Podešavanja",
         "action": "settings"
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "Odjavi se",
         "action": "logout"
     }

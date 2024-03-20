@@ -58,6 +58,10 @@ export const dictionary = {
         'Odjavi se',
         'Log out'
     ],
+    'Korisnik': [
+        'Korisnik',
+        'User'
+    ],
     
     // other on main scree of more tab:
     'Nalog':[

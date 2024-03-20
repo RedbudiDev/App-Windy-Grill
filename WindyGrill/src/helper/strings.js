@@ -29,7 +29,8 @@ export const screens = {
     moreTabMainScreen: 'More-Tab-Main-Screen',
     feedbackScreen: 'Feedback-Screen',
     cartScreen: 'Cart-Screen',
-    settingsScreen : 'Settings-Screen'
+    settingsScreen : 'Settings-Screen',
+    userScreen: 'User-Screen'
 }
 
 

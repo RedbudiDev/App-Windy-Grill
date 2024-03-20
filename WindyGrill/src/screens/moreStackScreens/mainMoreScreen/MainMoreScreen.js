@@ -37,20 +37,17 @@ const MainMoreScreen = () => {
                                     case 'feedback':
                                         navigation.navigate(screens.feedbackScreen);
                                         break;
-                                    case 'register':
-                                        navigation.navigate(screens.registerScreen);
-                                        break;
-                                    case 'login':
-                                        navigation.navigate(screens.loginScreen);
-                                        break;
                                     case 'settings':
-                                        navigation.navigate(screens.settingsScreen); 
+                                        navigation.navigate(screens.settingsScreen);
                                         break;
                                     case 'career':
                                         console.log("A");
                                         break;
-                                    case 'logout': 
+                                    case 'logout':
                                         dispatch(updateToken(null));
+                                        break;
+                                    case 'user':
+                                        navigation.navigate(screens.userScreen);
                                         break;
                                     default:
                                         console.log("B");
