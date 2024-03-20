@@ -28,6 +28,39 @@ const LoginScreen = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [loading, setLoading] = React.useState(false);
+    const [showPasswordValidationError, setShowPasswordValidationError] = React.useState(false);
+
+
+    /**
+     * @param {string} password 
+     * @returns {boolean}
+     * function for checking if format of password is ok
+     */
+    function _validatePassword(password) {
+        // Provjera da li ima barem jedan specijalni karakter
+        const specialCharacterRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
+        if (!specialCharacterRegex.test(password)) {
+            return false;
+        }
+
+        // Provjera minimalne dužine
+        if (password.length < 6) {
+            return false;
+        }
+
+        // Provjera da li ima barem jedno slovo
+        const letterRegex = /[a-zA-Z]/;
+        if (!letterRegex.test(password)) {
+            return false;
+        }
+        // Provjera da li ima barem jedno veliko slovo
+        const capitalLetterRegex = /[A-Z]/;
+        if (!capitalLetterRegex.test(password)) {
+            return false;
+        }
+
+        return true;
+    }
 
     /**
      * function for validation 
@@ -35,6 +68,7 @@ const LoginScreen = () => {
      * returning object { success, message }
      */
     function _validateData() {
+        setShowPasswordValidationError(false);
         if (!email.trim()) {
             return {
                 success: false,
@@ -45,6 +79,13 @@ const LoginScreen = () => {
             return {
                 success: false,
                 message: __("Unesite šifru")
+            }
+        }
+        if (!_validatePassword(password)) {
+            setShowPasswordValidationError(true);
+            return {
+                success: false,
+                message: __("Nije dobar format šifre")
             }
         }
         return {
@@ -126,6 +167,17 @@ const LoginScreen = () => {
         }
     }
 
+    /** 
+     * function that returns JSX component 
+     * based on passsword validation
+     */
+    const _renderPasswordValidationError = () => {
+        if(showPasswordValidationError) {
+            return <Text style = {styles.passwordErrorText}>{__("Šifra mora imati minimum 6 karaktera, jedan specijalan karakter i jedno veliko slovo.")}</Text>
+        } else {
+            return null;
+        }
+    }
     // main return
     if (loading) {
         return <Loading />
@@ -162,13 +214,13 @@ const LoginScreen = () => {
                         secured={true}
                         customInputStyle={{ backgroundColor: appColors.white }}
                     />
-
+                    {_renderPasswordValidationError()}
                     <TouchableOpacity
                         activeOpacity={0.7}
                         onPress={() => { navigation.navigate(screens.forgotPasswordScreen) }}
                         style={styles.forgotContainer}
                     >
-                        <Text style={{...styles.forgotText, ...globalStyles.textFontSemiBold, color: appColors.white}}>{__("Zaboravljena lozinka") + "?"}</Text>
+                        <Text style={{ ...styles.forgotText, ...globalStyles.textFontSemiBold, color: appColors.white }}>{__("Zaboravljena lozinka") + "?"}</Text>
                     </TouchableOpacity>
 
                     {/** register butotn */}
@@ -176,7 +228,7 @@ const LoginScreen = () => {
                         <Text style={[styles.forgotText, { alignSelf: 'center' }]}>
                             {__("Nemate nalog?")}
                             <Text
-                                style={{ 
+                                style={{
                                     color: appColors.white,
                                     ...globalStyles.textFontSemiBold
                                 }}
@@ -209,7 +261,8 @@ const styles = StyleSheet.create({
     forgotContainer: {
         flexDirection: 'row',
         alignSelf: 'flex-end',
-        marginHorizontal: 20
+        marginHorizontal: 20,
+        marginTop: 10
     },
     forgotText: {
         color: appColors.textGray,
@@ -223,6 +276,12 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150,
         alignSelf: 'center'
+    },
+    passwordErrorText: {
+        marginHorizontal: 25,
+        fontSize: 15,
+        color: appColors.red,
+        ...globalStyles.textFontRegular
     }
 })
 

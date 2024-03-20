@@ -62,6 +62,14 @@ export const dictionary = {
         'Korisnik',
         'User'
     ],
+    'Nije dobar format šifre': [
+        'Nije dobar format šifre',
+        'Not a good password format'
+    ],
+    'Šifra mora imati minimum 6 karaktera, jedan specijalan karakter i jedno veliko slovo.': [
+        'Šifra mora imati minimum 6 karaktera, jedan specijalan karakter i jedno veliko slovo.',
+        'Password must have at least 6 characters, one special character and one capital letter.'
+    ],
     
     // other on main scree of more tab:
     'Nalog':[
