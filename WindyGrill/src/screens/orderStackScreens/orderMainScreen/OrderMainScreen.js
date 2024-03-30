@@ -119,7 +119,7 @@ const OrderMainScreen = () => {
                         return (
                             <ProductItem
                                 item={item}
-                                onProductItemPress={() => { navigation.navigate(screens.productDetailOrderTabScreen) }}
+                                onProductItemPress={() => { navigation.navigate(screens.productDetailOrderTabScreen, { product: item }) }}
                             />
                         )
                     }}
