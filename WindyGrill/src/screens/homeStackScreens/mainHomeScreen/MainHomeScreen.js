@@ -40,7 +40,7 @@ const MainHomeScreen = () => {
                     <View key={i.toString()}>
                         <SubCategoryItem
                             item={item}
-                            onSubCategoryItemPress={() => { navigation.navigate(screens.productDetailHomeTabScreen) }}
+                            onSubCategoryItemPress={() => { alert('Not real item from api call') }}
                             oneByRow={true}
                             renderLine={true}
                         />
