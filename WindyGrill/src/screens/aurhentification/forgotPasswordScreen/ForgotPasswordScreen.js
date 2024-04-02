@@ -21,61 +21,14 @@ const ForgotPasswordScreen = () => {
 
     // states for screen
     const [email, setEmail] = React.useState("");
-    const [newPassword, setNewPassword] = React.useState('');
-    const [showPasswordValidationError, setShowPasswordValidationError] = React.useState(false);
-
-    /**
-     * @param {string} password 
-     * @returns {boolean}
-     * function for checking if format of password is ok
-     */
-    function _validatePassword(password) {
-        // Provjera da li ima barem jedan specijalni karakter
-        const specialCharacterRegex = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
-        if (!specialCharacterRegex.test(password)) {
-            return false;
-        }
-
-        // Provjera minimalne dužine
-        if (password.length < 6) {
-            return false;
-        }
-
-        // Provjera da li ima barem jedno slovo
-        const letterRegex = /[a-zA-Z]/;
-        if (!letterRegex.test(password)) {
-            return false;
-        }
-        // Provjera da li ima barem jedno veliko slovo
-        const capitalLetterRegex = /[A-Z]/;
-        if (!capitalLetterRegex.test(password)) {
-            return false;
-        }
-
-        return true;
-    }
 
 
     /** function for validating fields */
     function _validateData() {
-        setShowPasswordValidationError(false);
         if (!email.trim()) {
             return {
                 success: false,
                 message: __('Unesite email')
-            }
-        }
-        if (!newPassword.trim()) {
-            return {
-                success: false,
-                message: __('Unesite šifru')
-            }
-        }
-        if (!_validatePassword(newPassword)) {
-            setShowPasswordValidationError(true);
-            return {
-                success: false,
-                message: __("Nije dobar format šifre")
             }
         }
         return {
@@ -90,15 +43,15 @@ const ForgotPasswordScreen = () => {
             const validateData = _validateData();
             const { message, success } = validateData;
             if (success) {
-                const url = 'all/V1/customers/resetPassword';
-                const methode = "POST";
+                const url = `all/V1/customers/password`;
+                const methode = "PUT";
                 const data = {
-                    newPassword: newPassword,
                     email: email,
-                    resetToken: ''
+                    template: 'basic'
                 };
-                const response = await fetchData(url, methode, data, null);
-                // TODO: api call for forgott password
+                const response = await fetchData(url, methode, data, undefined);
+                console.log("Response:", response);
+
             } else {
                 Toast.show({
                     text1: message,
@@ -115,18 +68,6 @@ const ForgotPasswordScreen = () => {
                 position: 'top',
                 visibilityTime: 1500
             });
-        }
-    }
-
-    /** 
-     * function that returns JSX component 
-     * based on passsword validation
-     */
-    const _renderPasswordValidationError = () => {
-        if(showPasswordValidationError) {
-            return <Text style = {styles.passwordErrorText}>{__("Šifra mora imati minimum 6 karaktera, jedan specijalan karakter i jedno veliko slovo")}</Text>
-        } else {
-            return null;
         }
     }
 
@@ -162,16 +103,6 @@ const ForgotPasswordScreen = () => {
                             keyboardType={"email-address"}
                             customInputStyle={{ backgroundColor: appColors.white }}
                         />
-                        <Input
-                            placeholder={__("Nova šifra")}
-                            multiline={false}
-                            value={newPassword}
-                            onChangeText={setNewPassword}
-                            keyboardType={"email-address"}
-                            customInputStyle={{ backgroundColor: appColors.white }}
-                            secured={true}
-                        />
-                        {_renderPasswordValidationError()}
                         {/** button */}
                         <Button
                             title={__("Resetuj šifru").toUpperCase()}
