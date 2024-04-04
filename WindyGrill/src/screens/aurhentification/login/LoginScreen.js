@@ -94,6 +94,25 @@ const LoginScreen = () => {
         }
     }
 
+    /** function for creating cart if don't exists */
+    async function _createCart(token) {
+        try {
+            const methode = "POST";
+            const url = `V1/carts/mine`;
+            const dataForServer = undefined;
+            const response = await fetchData(url, methode, dataForServer, token);
+            console.log("Response cart create:", response);
+            const {success, data } = response;
+            if(success) {
+                console.log("Uspesno kreirana korpa");
+            } else {
+                console.log("Došlo je do greške prilikom kreiranja korpe");
+            }
+        } catch (error) {
+            console.log("Error create cart:", error);
+        }
+    }
+
     /** function for login */
     async function _doLogin() {
         try {
@@ -109,6 +128,7 @@ const LoginScreen = () => {
                 const response = await fetchData(url, methode, data, null);
                 const token = response?.data;
                 dispatch(updateToken(token));
+                _createCart(token);
                 console.log("Token:", token);
                 setLoading(false);
                 Toast.show({
