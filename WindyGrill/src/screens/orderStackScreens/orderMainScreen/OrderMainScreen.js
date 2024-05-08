@@ -10,6 +10,7 @@ import Header from '../../../components/Header';
 import CategoryItem from './components/CategoryItem';
 import ProductItem from './components/ProductItem';
 import Loading from '../../../components/Loading';
+import CartModal from './components/CartModal';
 
 import { appColors } from '../../../helper/colors';
 import { screens } from '../../../helper/strings';
@@ -53,6 +54,10 @@ const OrderMainScreen = () => {
     const [page, setPage] = React.useState(1);
     const [loadingPagination, setLoadingPagination] = React.useState(false);
     const [totalPages, setTotalPages] = React.useState(0);
+
+    // states for cart 
+    const [isCartModalVisible, setIsCartModalVisible] = React.useState(false);
+    const [selectedCartItem, setSelectedCartItem] = React.useState(null);
 
     // ref to scrollview
     const scrollViewRef = React.useRef(null);
@@ -120,6 +125,10 @@ const OrderMainScreen = () => {
                             <ProductItem
                                 item={item}
                                 onProductItemPress={() => { navigation.navigate(screens.productDetailOrderTabScreen, { product: item }) }}
+                                onAddToCartPress={(obj) => { 
+                                    setIsCartModalVisible(!isCartModalVisible);
+                                    setSelectedCartItem(obj);
+                                }}
                             />
                         )
                     }}
@@ -203,31 +212,41 @@ const OrderMainScreen = () => {
     }, [currentCategory, page]);
 
     return (
-        <SafeAreaView style={styles.container}>
-            <ScrollView bounces={false} nestedScrollEnabled={true} contentContainerStyle={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
-                <Header
-                    showRightIcon
-                    onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
-                />
-                <View style={{ backgroundColor: appColors.baseColor }}>
-                    <Text style={styles.textTitle}>{__("Naš meni").toUpperCase()}</Text>
-                    <ScrollView
-                        ref={scrollViewRef}
-                        scrollEnabled={true}
-                        nestedScrollEnabled={true}
-                        contentContainerStyle={{ paddingHorizontal: 15 }}
-                        horizontal
-                        showsVerticalScrollIndicator={false}
-                        showsHorizontalScrollIndicator={false}
-                    >
-                        {_renderCategories()}
-                    </ScrollView>
-                </View>
-                <View style={{ marginTop: 5, flex: 1, backgroundColor: appColors.white, flex: 1 }}>
-                    {_renderCategoryProducts()}
-                </View>
-            </ScrollView>
-        </SafeAreaView>
+        <>
+            <SafeAreaView style={styles.container}>
+                <ScrollView bounces={false} nestedScrollEnabled={true} contentContainerStyle={{ flex: 1 }} showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
+                    <Header
+                        showRightIcon
+                        onRightIconPress={() => { navigation.navigate(screens.moreTab, { screen: screens.cartScreen }) }}
+                    />
+                    <View style={{ backgroundColor: appColors.baseColor }}>
+                        <Text style={styles.textTitle}>{__("Naš meni").toUpperCase()}</Text>
+                        <ScrollView
+                            ref={scrollViewRef}
+                            scrollEnabled={true}
+                            nestedScrollEnabled={true}
+                            contentContainerStyle={{ paddingHorizontal: 15 }}
+                            horizontal
+                            showsVerticalScrollIndicator={false}
+                            showsHorizontalScrollIndicator={false}
+                        >
+                            {_renderCategories()}
+                        </ScrollView>
+                    </View>
+                    <View style={{ marginTop: 5, flex: 1, backgroundColor: appColors.white, flex: 1 }}>
+                        {_renderCategoryProducts()}
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
+            <CartModal
+                isVisible={isCartModalVisible}
+                onBackDropPress={() => { 
+                    setSelectedCartItem(null);
+                    setIsCartModalVisible(false) 
+                }}
+                selectedCartItem={selectedCartItem}
+            />
+        </>
     )
 }
 

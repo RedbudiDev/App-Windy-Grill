@@ -15,7 +15,8 @@ const ProductItem = (props) => {
         item = {}, // prop for item
         onProductItemPress = () => { }, // callback for clcik
         oneByRow = false, // prop for knowing if it is one by row or
-        renderLine = false // prop for knowing if you need line or not
+        renderLine = false, // prop for knowing if you need line or not
+        onAddToCartPress = () => { }, // prop for callback for press on cart button
     } = props;
 
     const __ = usePolyglot();
@@ -29,6 +30,15 @@ const ProductItem = (props) => {
         }
     }
     let imageUrl = `${config?.baseUrl}/media/catalog/product${item?.custom_attributes[0]?.value}`;
+
+    /** handle add to cart press */
+    function _handleAddToCart() {
+        let obj = {
+            image: imageUrl,
+            item: item
+        }
+        onAddToCartPress(obj);
+    }
     return (
         <>
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
@@ -51,6 +61,12 @@ const ProductItem = (props) => {
                         customContainerStyle={oneByRow ? styles.buttonContainerLarge : styles.buttonContainer}
                         customTitleStyle={{ padding: 0, color: appColors.white }}
                         onPress={() => { onProductItemPress() }}
+                    />
+                    <Button
+                        title={__("Dodaj u korpu")}
+                        customContainerStyle={oneByRow ? styles.buttonContainerLarge : styles.buttonContainer}
+                        customTitleStyle={{ padding: 0, color: appColors.white }}
+                        onPress={() => { _handleAddToCart() }}
                     />
                 </TouchableOpacity>
                 {_renderLine()}
@@ -123,9 +139,10 @@ const styles = StyleSheet.create({
         marginTop: 10,
         justifyContent: 'center',
         backgroundColor: appColors.red,
-        width: 100,
+        width: 'auto',
         height: 40,
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingHorizontal: 20
     },
     buttonContainerLarge: {
         marginTop: 10,

@@ -13,4 +13,6 @@ export const appIcons = {
     logo: require('../../assets/icons/logo.png'),
     logowide: require('../../assets/icons/logowide.png'),
     offerImageOne: require('../../assets/icons/offerimageOne.jpeg'),
+    close: require('../../assets/icons/close.png'),
+    carticon: require('../../assets/icons/carticon.png'),
 }

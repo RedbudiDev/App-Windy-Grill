@@ -2,6 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Dimensions } from 'react-native';
 import { appColors } from '../helper/colors';
 import { globalStyles } from '../helper/globalStyles';
+import Loading from './Loading';
 
 const Button = (props) => {
 
@@ -10,16 +11,23 @@ const Button = (props) => {
         onPress = () => { }, // callback for press on button
         customContainerStyle = {}, // prop for custom contaienr style
         customTitleStyle = {}, // prop for custom title text style
-        disabled = false
+        disabled = false, // prop for disabling button
+        loading = false, // prop for loading button
     } = props;
+
+    // main reutnr
     return (
         <TouchableOpacity
             onPress={() => { onPress() }}
             style={[styles.container, customContainerStyle]}
             activeOpacity={0.7}
-            disabled={disabled}
+            disabled={disabled || loading}
         >
-            <Text style={[styles.text, customTitleStyle]}>{title}</Text>
+            {
+                loading ?
+                    <Loading /> :
+                    <Text style={[styles.text, customTitleStyle]}>{title}</Text>
+            }
         </TouchableOpacity>
     )
 }
